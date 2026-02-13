@@ -3,92 +3,170 @@
 <head>
     <title>Shridhar DT | QA Automation Engineer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
-            background-color: #0f172a;
-            color: white;
+            padding: 0;
+            box-sizing: border-box;
         }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            scroll-behavior: smooth;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 80px;
+            background-color: rgba(0,0,0,0.3);
+            position: sticky;
+            top: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
         header {
             text-align: center;
-            padding: 60px 20px;
+            padding: 120px 20px;
         }
-        h1 {
-            color: #38bdf8;
-            font-size: 40px;
-        }
-        h2 {
+
+        header h1 {
+            font-size: 48px;
             color: #38bdf8;
         }
+
+        header p {
+            margin-top: 15px;
+            font-size: 18px;
+            color: #cbd5e1;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            background-color: #38bdf8;
+            color: #0f172a;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
         section {
-            padding: 40px 80px;
+            padding: 80px 120px;
         }
-        ul {
-            line-height: 1.8;
+
+        h2 {
+            margin-bottom: 30px;
+            color: #38bdf8;
         }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
         .card {
-            background-color: #1e293b;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 15px;
+            transition: 0.3s;
         }
+
+        .card:hover {
+            transform: translateY(-8px);
+            background: #334155;
+        }
+
+        ul {
+            line-height: 2;
+        }
+
         footer {
             text-align: center;
-            padding: 20px;
-            background-color: #1e293b;
+            padding: 30px;
+            background: #0f172a;
+            margin-top: 60px;
+            color: #94a3b8;
         }
     </style>
 </head>
 <body>
 
+<nav>
+    <div><strong>Shridhar DT</strong></div>
+    <div>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+    </div>
+</nav>
+
 <header>
     <h1>Shridhar DT</h1>
     <p>QA Automation Engineer | Python | PyTest | Allure Reports</p>
+    <a href="#projects" class="btn">View Projects</a>
 </header>
 
-<section>
+<section id="about">
     <h2>About Me</h2>
     <p>
-        I build scalable automation frameworks for enterprise applications.
-        My expertise includes Python-based automation, structured test design,
-        Allure report integration, and secure coding practices.
+        I design and build scalable automation frameworks for enterprise applications.
+        My expertise includes Python-based automation, structured test architecture,
+        Allure report integration, and secure configuration management.
     </p>
 </section>
 
-<section>
+<section id="skills">
     <h2>Technical Skills</h2>
     <ul>
-        <li>Python</li>
-        <li>PyTest</li>
-        <li>Allure Reports</li>
+        <li>Python Automation</li>
+        <li>PyTest Framework</li>
+        <li>Allure Reports Integration</li>
         <li>Git & Version Control</li>
-        <li>Automation Framework Development</li>
+        <li>Automation Framework Design</li>
     </ul>
 </section>
 
-<section>
+<section id="projects">
     <h2>Projects</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Enterprise Automation Framework</h3>
+            <p>Designed modular automation architecture with reusable components and structured reporting.</p>
+        </div>
 
-    <div class="card">
-        <h3>Enterprise Automation Framework</h3>
-        <p>Designed a modular Python automation framework with structured logging and reporting integration.</p>
+        <div class="card">
+            <h3>Allure Reporting Integration</h3>
+            <p>Integrated Allure with PyTest to generate detailed execution reports and failure traceability.</p>
+        </div>
+
+        <div class="card">
+            <h3>Secure Credential Refactoring</h3>
+            <p>Removed hardcoded secrets and implemented environment-based configuration management.</p>
+        </div>
     </div>
-
-    <div class="card">
-        <h3>Allure Reporting Integration</h3>
-        <p>Integrated Allure reports for detailed execution tracking and failure traceability.</p>
-    </div>
-
-    <div class="card">
-        <h3>Secure Credential Refactoring</h3>
-        <p>Replaced hardcoded credentials with environment-based configuration for secure repository handling.</p>
-    </div>
-
 </section>
 
 <footer>
-    <p>© 2026 Shridhar DT</p>
+    © 2026 Shridhar DT | QA Automation Engineer
 </footer>
 
 </body>
