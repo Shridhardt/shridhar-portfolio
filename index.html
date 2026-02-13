@@ -3,311 +3,406 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shridhar DT | QA Automation Engineer</title>
+<title>Shridhar DT | Enterprise QA Automation Engineer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Inter',sans-serif;
-scroll-behavior:smooth;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#f6f7ff,#fdf2ff);
-color:#111;
-overflow-x:hidden;
-transition:0.4s;
+    overflow-x:hidden;
+    background:linear-gradient(135deg,#f3e8ff,#fbcfe8,#e0f2fe);
+    color:#111;
 }
 
-body.dark{
-background:#0f172a;
-color:#fff;
+/* ===============================
+   STRONGER RAIN EFFECT
+================================ */
+
+#rain{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:0;
+    pointer-events:none;
 }
 
-/* NAVBAR */
-.nav{
-position:fixed;
-top:20px;
-left:50%;
-transform:translateX(-50%);
-width:90%;
-max-width:1100px;
-display:flex;
-justify-content:space-between;
-padding:14px 30px;
-background:rgba(255,255,255,0.7);
-backdrop-filter:blur(15px);
-border-radius:40px;
-z-index:100;
+/* ===============================
+   GLASS NAVBAR
+================================ */
+
+.navbar{
+    position:fixed;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    width:90%;
+    max-width:1100px;
+    display:flex;
+    justify-content:space-between;
+    padding:14px 28px;
+    backdrop-filter:blur(15px);
+    background:rgba(255,255,255,0.6);
+    border-radius:50px;
+    box-shadow:0 10px 40px rgba(124,58,237,0.1);
+    z-index:100;
 }
 
-body.dark .nav{
-background:rgba(30,41,59,0.7);
+.navbar a{
+    text-decoration:none;
+    color:#111;
+    font-weight:500;
+    margin-left:25px;
 }
 
-.nav a{
-text-decoration:none;
-margin-left:25px;
-color:inherit;
-font-weight:500;
-}
+/* ===============================
+   HERO
+================================ */
 
-/* HERO */
 .hero{
-min-height:90vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding-top:120px;
+    min-height:85vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:120px 20px 60px;
+    position:relative;
+    z-index:1;
 }
 
 .avatar{
-width:170px;
-height:170px;
-border-radius:50%;
-overflow:hidden;
-animation:float 4s ease-in-out infinite;
-box-shadow:0 25px 60px rgba(124,58,237,0.3);
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    overflow:hidden;
+    margin-bottom:20px;
+    animation:float 4s ease-in-out infinite;
+    box-shadow:0 25px 60px rgba(168,85,247,0.25);
 }
 
 @keyframes float{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-12px);}
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(-15px);}
+    100%{transform:translateY(0px);}
 }
 
 .avatar img{
-width:100%;
-height:100%;
-object-fit:cover;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transform:scale(1.08);
 }
 
 .hero h1{
-font-size:48px;
-margin:20px 0 10px;
+    font-size:48px;
+    font-weight:700;
+    margin-bottom:10px;
 }
 
 .typing{
-color:#7c3aed;
-font-weight:600;
-margin-bottom:15px;
-height:25px;
+    font-size:20px;
+    font-weight:600;
+    color:#7c3aed;
+    height:28px;
+    margin-bottom:15px;
 }
 
 .hero p{
-max-width:650px;
-color:#555;
-line-height:1.6;
+    max-width:680px;
+    color:#555;
+    margin-bottom:35px;
+    line-height:1.6;
 }
 
-body.dark .hero p{
-color:#cbd5e1;
+.stats{
+    display:flex;
+    gap:60px;
 }
 
-/* SECTION */
+.stat{
+    font-size:22px;
+    font-weight:700;
+}
+
+.stat span{
+    display:block;
+    font-size:14px;
+    font-weight:400;
+    color:#666;
+}
+
+/* ===============================
+   SECTION
+================================ */
+
 section{
-padding:100px 20px;
-text-align:center;
+    padding:90px 20px;
+    text-align:center;
+    position:relative;
+    z-index:1;
 }
 
 .section-title{
-font-size:32px;
-margin-bottom:40px;
+    font-size:34px;
+    margin-bottom:20px;
+    font-weight:700;
 }
 
-/* SKILLS */
-.skill-bar{
-width:80%;
-max-width:650px;
-margin:18px auto;
-background:rgba(0,0,0,0.08);
-border-radius:10px;
-overflow:hidden;
+.section-sub{
+    max-width:700px;
+    margin:auto;
+    color:#555;
+    margin-bottom:50px;
+    line-height:1.6;
 }
 
-body.dark .skill-bar{
-background:rgba(255,255,255,0.1);
-}
-
-.skill-fill{
-height:12px;
-width:0;
-background:linear-gradient(90deg,#7c3aed,#ec4899);
-transition:1.5s;
-}
-
-/* PROJECTS */
-.project-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
-max-width:1100px;
-margin:auto;
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    max-width:1100px;
+    margin:auto;
 }
 
 .card{
-background:rgba(255,255,255,0.7);
-backdrop-filter:blur(20px);
-padding:30px;
-border-radius:20px;
-transition:0.4s;
-}
-
-body.dark .card{
-background:rgba(30,41,59,0.7);
+    background:rgba(255,255,255,0.75);
+    backdrop-filter:blur(25px);
+    padding:28px;
+    border-radius:20px;
+    box-shadow:0 20px 50px rgba(124,58,237,0.08);
+    transition:all 0.4s ease;
 }
 
 .card:hover{
-transform:translateY(-10px);
+    transform:translateY(-8px);
 }
 
-/* CONTACT */
-.icons{
-display:flex;
-justify-content:center;
-gap:30px;
-margin-top:20px;
+/* ===============================
+   CONTACT
+================================ */
+
+.contact-icons{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    margin-top:30px;
 }
 
-.icons a{
-font-size:16px;
-text-decoration:none;
-color:#7c3aed;
-font-weight:600;
+.contact-icons a{
+    width:45px;
+    height:45px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:rgba(255,255,255,0.8);
+    box-shadow:0 10px 30px rgba(124,58,237,0.1);
+    transition:0.3s;
 }
 
-/* TOGGLE */
-.toggle{
-cursor:pointer;
-margin-left:20px;
+.contact-icons a:hover{
+    transform:scale(1.1);
+}
+
+svg{
+    width:22px;
+    height:22px;
+    fill:#7c3aed;
 }
 </style>
 </head>
 <body>
 
-<div class="nav">
-<strong>Shridhar DT</strong>
-<div>
-<a href="#home">Home</a>
-<a href="#skills">Expertise</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-<span class="toggle" onclick="toggleMode()">🌙</span>
-</div>
-</div>
+<canvas id="rain"></canvas>
+
+<nav class="navbar">
+    <strong>Shridhar DT</strong>
+    <div>
+        <a href="#home">Home</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
 
 <section class="hero" id="home">
-<div class="avatar">
-<img src="bitmoji.png">
-</div>
+    <div class="avatar">
+        <img src="bitmoji.png" alt="Shridhar">
+    </div>
 
-<h1>Shridhar DT</h1>
+    <h1>Shridhar DT</h1>
+    <div class="typing" id="typing"></div>
 
-<div class="typing" id="typing"></div>
+    <p>
+        Enterprise QA Automation Engineer specializing in scalable test frameworks,
+        CI/CD automation pipelines, structured reporting, and production-grade reliability.
+    </p>
 
-<p>
-Enterprise QA Automation Engineer designing scalable test architectures,
-CI/CD automation pipelines, and observability-driven reporting systems.
-Focused on reliability, maintainability, and production-ready automation delivery.
-</p>
+    <div class="stats">
+        <div class="stat">4+<span>Years Experience</span></div>
+        <div class="stat">100+<span>Automation Scripts</span></div>
+        <div class="stat">Enterprise<span>Production Ready</span></div>
+    </div>
 </section>
 
-<section id="skills">
-<h2 class="section-title">Technical Expertise</h2>
+<section id="expertise">
+    <h2 class="section-title">Technical Experience</h2>
+    <p class="section-sub">
+        Designed maintainable automation frameworks using Python & PyTest,
+        integrated Allure reporting for traceability, and implemented
+        CI/CD test execution using Azure DevOps pipelines.
+    </p>
 
-<div class="skill-bar"><div class="skill-fill" data-width="95%"></div></div>
-<div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
-<div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
-<div class="skill-bar"><div class="skill-fill" data-width="88%"></div></div>
+    <div class="grid">
+        <div class="card">
+            <h3>Automation Framework Engineering</h3>
+            <p>Modular test design, Page Object Model, reusable components,
+            dependency isolation, structured logging.</p>
+        </div>
 
+        <div class="card">
+            <h3>Reporting & Traceability</h3>
+            <p>Allure reporting integration, step-level execution insights,
+            failure diagnostics, regression visibility.</p>
+        </div>
+
+        <div class="card">
+            <h3>CI/CD & DevOps</h3>
+            <p>Azure DevOps pipelines, automated regression triggers,
+            secure configuration handling, artifact publishing.</p>
+        </div>
+
+        <div class="card">
+            <h3>Technology Stack</h3>
+            <p>Python, JavaScript, SQL • PyTest, Cypress • Git,
+            Azure DevOps • Allure, Jira.</p>
+        </div>
+    </div>
 </section>
 
 <section id="projects">
-<h2 class="section-title">Enterprise Automation Platform</h2>
+    <h2 class="section-title">Enterprise Automation Implementation</h2>
 
-<div class="project-grid">
+    <div class="grid">
+        <div class="card">
+            <h3>Scalable Regression Framework</h3>
+            <p>Developed structured automation architecture improving
+            regression efficiency and maintainability.</p>
+        </div>
 
-<div class="card">
-<h3>Framework Architecture</h3>
-<p>
-Designed modular automation framework using Python & PyTest.
-Implemented Page Object Model, reusable components, structured logging,
-and dependency isolation for maintainable regression systems.
-</p>
-</div>
+        <div class="card">
+            <h3>Observability Reporting System</h3>
+            <p>Enabled centralized execution visibility through Allure,
+            enhancing defect traceability and analytics.</p>
+        </div>
 
-<div class="card">
-<h3>Allure Reporting Integration</h3>
-<p>
-Integrated Allure for granular step-level traceability,
-failure diagnostics, execution analytics,
-and structured regression visibility across environments.
-</p>
-</div>
-
-<div class="card">
-<h3>CI/CD Pipeline Orchestration</h3>
-<p>
-Configured Azure DevOps pipelines enabling automated regression triggers,
-environment-based configuration,
-secure credential injection, and artifact publishing.
-</p>
-</div>
-
-</div>
+        <div class="card">
+            <h3>Secure DevOps Integration</h3>
+            <p>Automated CI/CD execution workflows ensuring continuous
+            validation and production-ready releases.</p>
+        </div>
+    </div>
 </section>
 
 <section id="contact">
-<h2 class="section-title">Contact</h2>
+    <h2 class="section-title">Contact</h2>
+    <p class="section-sub">Let’s connect for enterprise automation collaborations.</p>
 
-<div class="icons">
-<a href="https://linkedin.com/in/YOUR-LINK" target="_blank">LinkedIn</a>
-<a href="https://github.com/YOUR-USERNAME" target="_blank">GitHub</a>
-<a href="mailto:your@email.com">Email</a>
-</div>
+    <div class="contact-icons">
 
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank">
+            <svg viewBox="0 0 24 24">
+            <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.22 8h4.56v14H.22V8zm7.44 0h4.37v1.91h.06c.61-1.15 2.09-2.37 4.3-2.37 4.6 0 5.45 3.03 5.45 6.97V22h-4.56v-6.91c0-1.65-.03-3.78-2.3-3.78-2.3 0-2.65 1.8-2.65 3.66V22H7.66V8z"/>
+            </svg>
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/" target="_blank">
+            <svg viewBox="0 0 24 24">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387..."/>
+            </svg>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:your@email.com">
+            <svg viewBox="0 0 24 24">
+            <path d="M12 13.065L.015 4.5h23.97L12 13.065zM12 15.135L0 6.57V19.5h24V6.57L12 15.135z"/>
+            </svg>
+        </a>
+
+    </div>
 </section>
 
 <script>
-// Typing animation
+
+/* Typing Animation */
+
 const roles=[
 "QA Automation Engineer",
 "Enterprise Application Automation",
-"CI/CD Pipeline Specialist"
+"CI/CD Pipeline Integration",
+"Structured Test Architecture"
 ];
 
-let i=0,j=0,isDeleting=false;
-const el=document.getElementById("typing");
+let i=0,j=0,current="",isDeleting=false;
+const typing=document.getElementById("typing");
 
 function type(){
-let text=roles[i];
+current=roles[i];
 if(!isDeleting){
-el.textContent=text.substring(0,j++);
-if(j>text.length){isDeleting=true;setTimeout(type,1000);return;}
+typing.textContent=current.substring(0,j++);
+if(j>current.length){isDeleting=true;setTimeout(type,1200);return;}
 }else{
-el.textContent=text.substring(0,j--);
+typing.textContent=current.substring(0,j--);
 if(j<0){isDeleting=false;i=(i+1)%roles.length;}
 }
-setTimeout(type,isDeleting?40:80);
+setTimeout(type,isDeleting?50:90);
 }
 type();
 
-// Skill animation
-window.addEventListener("scroll",()=>{
-document.querySelectorAll(".skill-fill").forEach(bar=>{
-bar.style.width=bar.dataset.width;
-});
-});
+/* Rain Effect */
 
-// Dark mode
-function toggleMode(){
-document.body.classList.toggle("dark");
+const canvas=document.getElementById("rain");
+const ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+const drops=[];
+for(let i=0;i<350;i++){
+drops.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+speed:Math.random()*2+1
+});
 }
+
+function draw(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+ctx.strokeStyle="rgba(168,85,247,0.35)";
+ctx.lineWidth=1.2;
+
+drops.forEach(d=>{
+ctx.beginPath();
+ctx.moveTo(d.x,d.y);
+ctx.lineTo(d.x,d.y+15);
+ctx.stroke();
+d.y+=d.speed;
+if(d.y>canvas.height){d.y=0;}
+});
+requestAnimationFrame(draw);
+}
+draw();
+
 </script>
 
 </body>
