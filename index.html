@@ -46,51 +46,31 @@ header{
 }
 header h1{
     font-size:52px;
-    margin-bottom:10px;
+    margin-bottom:15px;
 }
 
-/* Floating rotating role */
-.floating-text{
-    font-size:20px;
-    font-weight:500;
+/* SLIDING ROLE */
+.role-container{
+    width:400px;
+    overflow:hidden;
     height:30px;
     margin-bottom:20px;
-    animation: floatY 3s ease-in-out infinite;
+    position:relative;
 }
 
-@keyframes floatY{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(-6px);}
-    100%{transform:translateY(0);}
+.role-slider{
+    display:flex;
+    transition:transform 1s ease;
 }
 
-.fade{
-    opacity:0;
-    transition:opacity 0.5s ease;
+.role{
+    min-width:400px;
+    text-align:center;
+    font-size:20px;
+    font-weight:500;
 }
 
-header p{
-    max-width:750px;
-    line-height:1.6;
-    font-size:18px;
-}
-
-.btn{
-    margin-top:25px;
-    padding:12px 30px;
-    border-radius:30px;
-    border:2px solid white;
-    text-decoration:none;
-    color:white;
-    font-weight:600;
-    transition:0.3s;
-}
-.btn:hover{
-    background:white;
-    color:#667eea;
-}
-
-/* SECTIONS */
+/* SECTION */
 section{
     padding:100px 120px;
 }
@@ -100,12 +80,13 @@ h2{
     font-size:32px;
 }
 
-/* GRID CARDS */
+/* WHAT I DO */
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:30px;
 }
+
 .card{
     background:white;
     padding:30px;
@@ -115,7 +96,15 @@ h2{
 }
 .card:hover{
     transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(102,126,234,0.2);
 }
+
+.icon{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+/* PROJECTS */
 .project-card{
     cursor:pointer;
 }
@@ -203,74 +192,78 @@ footer{
 </div>
 </nav>
 
-<!-- 1️⃣ HERO -->
+<!-- HERO -->
 <header id="home">
 <h1>Shridhar DT</h1>
 
-<div class="floating-text">
-<span id="roleText">QA Automation Engineer</span>
+<div class="role-container">
+<div class="role-slider" id="roleSlider">
+<div class="role">QA Automation Engineer</div>
+<div class="role">Enterprise Application Automation</div>
+<div class="role">Pywinauto Desktop UI Automation</div>
+<div class="role">Allure Reporting & Test Traceability</div>
+<div class="role">CI/CD Pipeline Integration</div>
+</div>
 </div>
 
 <p>
 I design and implement scalable automation frameworks for complex enterprise applications,
 focusing on reliability, maintainability, structured reporting, and secure development practices.
 </p>
-
-<a href="#projects" class="btn">View Projects</a>
 </header>
 
-<!-- 2️⃣ WHAT I DO -->
+<!-- WHAT I DO -->
 <section id="what">
 <h2>What I Do</h2>
+
 <div class="grid">
 
 <div class="card">
+<div class="icon">⚙️</div>
 <h3>Automation Framework Architecture</h3>
-<p>Design modular, scalable automation systems using Python & PyTest with reusable components.</p>
+<p>Design modular, scalable automation systems using Python & PyTest.</p>
 </div>
 
 <div class="card">
+<div class="icon">🖥️</div>
 <h3>Enterprise Desktop Automation</h3>
-<p>Automate complex business workflows using Pywinauto with structured validation strategies.</p>
+<p>Automate complex workflows using Pywinauto with structured validation.</p>
 </div>
 
 <div class="card">
+<div class="icon">📊</div>
 <h3>Allure Reporting & Traceability</h3>
-<p>Integrate Allure for step-level reporting, execution visibility, and failure traceability.</p>
+<p>Integrate Allure for detailed execution visibility and debugging analysis.</p>
 </div>
 
 <div class="card">
+<div class="icon">🚀</div>
 <h3>CI/CD Pipeline Integration</h3>
-<p>Implement automation in CI/CD workflows ensuring continuous validation and deployment stability.</p>
+<p>Enable continuous validation through automated CI/CD workflows.</p>
 </div>
 
 </div>
 </section>
 
-<!-- 3️⃣ PROJECTS -->
+<!-- PROJECTS -->
 <section id="projects">
 <h2>Projects</h2>
 <div class="grid">
 
 <div class="card project-card" onclick="openModal('p1')">
 <h3>Enterprise Automation Framework</h3>
-<p>Click to view detailed architecture & approach</p>
+<p>Click to view architecture details</p>
 </div>
 
 <div class="card project-card" onclick="openModal('p2')">
 <h3>Allure Reporting Integration</h3>
-<p>Click to view reporting enhancements</p>
-</div>
-
-<div class="card project-card" onclick="openModal('p3')">
-<h3>Secure Credential Refactoring</h3>
-<p>Click to view security implementation</p>
+<p>Click to view implementation</p>
 </div>
 
 </div>
 </section>
 
-<!-- 4️⃣ CONTACT -->
+<!-- CONTACT -->
 <section id="contact">
 <h2>Contact</h2>
 <div class="contact-box">
@@ -281,7 +274,7 @@ focusing on reliability, maintainability, structured reporting, and secure devel
 </div>
 </section>
 
-<!-- 5️⃣ FOLLOW -->
+<!-- FOLLOW -->
 <section class="follow">
 <h2>Follow Me</h2>
 <a href="https://linkedin.com/in/shridhar-dt-5869a8196" target="_blank">LinkedIn</a>
@@ -293,18 +286,12 @@ focusing on reliability, maintainability, structured reporting, and secure devel
 © 2026 Shridhar DT. All rights reserved.
 </footer>
 
-<!-- PROJECT MODALS -->
-
+<!-- MODALS -->
 <div id="p1" class="modal">
 <div class="modal-content">
 <div class="close" onclick="closeModal('p1')">Close</div>
 <h3>Enterprise Automation Framework</h3>
-<p>
-Designed modular automation framework using PyTest.
-Implemented Page Object Model structure, reusable utilities,
-structured logging, and integrated Allure reporting.
-Improved regression reliability and maintainability.
-</p>
+<p>Designed modular architecture using PyTest and integrated structured reporting via Allure.</p>
 </div>
 </div>
 
@@ -312,23 +299,7 @@ Improved regression reliability and maintainability.
 <div class="modal-content">
 <div class="close" onclick="closeModal('p2')">Close</div>
 <h3>Allure Reporting Integration</h3>
-<p>
-Integrated Allure with PyTest to enable step-level traceability,
-improved debugging visibility, structured failure analysis,
-and enhanced reporting transparency for stakeholders.
-</p>
-</div>
-</div>
-
-<div id="p3" class="modal">
-<div class="modal-content">
-<div class="close" onclick="closeModal('p3')">Close</div>
-<h3>Secure Credential Refactoring</h3>
-<p>
-Removed hardcoded credentials, implemented environment variables,
-improved Git practices, and strengthened automation framework
-security compliance.
-</p>
+<p>Enabled detailed test execution visibility and improved debugging efficiency.</p>
 </div>
 </div>
 
@@ -340,28 +311,17 @@ function closeModal(id){
 document.getElementById(id).style.display="none";
 }
 
-/* Floating rotating roles */
-const roles = [
-"QA Automation Engineer",
-"Enterprise Application Automation",
-"Pywinauto Desktop UI Automation",
-"Allure Reporting & Test Traceability",
-"CI/CD Pipeline Integration"
-];
-
+/* Sliding role animation */
+let slider = document.getElementById("roleSlider");
 let index = 0;
-const roleText = document.getElementById("roleText");
 
-function changeRole(){
-roleText.classList.add("fade");
-setTimeout(()=>{
-index = (index + 1) % roles.length;
-roleText.textContent = roles[index];
-roleText.classList.remove("fade");
-},500);
+setInterval(()=>{
+index++;
+if(index >= slider.children.length){
+index = 0;
 }
-
-setInterval(changeRole,3000);
+slider.style.transform = "translateX(-" + (400 * index) + "px)";
+},3500);
 </script>
 
 </body>
