@@ -3,10 +3,15 @@
 <head>
 <title>Shridhar DT | QA Automation Engineer</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 body{
     font-family:'Poppins',sans-serif;
@@ -14,91 +19,84 @@ body{
     color:#1e293b;
 }
 
-/* NAV */
+/* NAVBAR */
 nav{
     display:flex;
     justify-content:space-between;
+    align-items:center;
     padding:20px 80px;
     background:white;
     position:fixed;
     width:100%;
     box-shadow:0 2px 10px rgba(0,0,0,0.05);
-    z-index:10;
+    z-index:100;
 }
+
 nav a{
     text-decoration:none;
     margin-left:25px;
     color:#1e293b;
     font-weight:500;
 }
-nav a:hover{color:#2563eb;}
 
-/* HERO */
+nav a:hover{
+    color:#6d28d9;
+}
+
+/* HERO SECTION */
 header{
     height:100vh;
-    background:linear-gradient(135deg,#667eea,#764ba2);
+    background:linear-gradient(135deg,#5f72bd,#9b23ea);
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
     color:white;
     padding:0 20px;
-    position:relative;
 }
 
-.hero-box{
-    backdrop-filter:blur(10px);
-    background:rgba(255,255,255,0.08);
-    padding:60px 40px;
-    border-radius:20px;
+.hero-container{
     max-width:850px;
 }
 
 /* BITMOJI */
 .bitmoji{
-    width:140px;
-    height:140px;
+    width:160px;
+    height:160px;
     border-radius:50%;
-    margin-bottom:20px;
-    border:4px solid rgba(255,255,255,0.3);
-    box-shadow:0 0 25px rgba(255,255,255,0.4);
+    object-fit:cover;
+    margin-bottom:25px;
+    border:5px solid rgba(255,255,255,0.4);
+    box-shadow:0 15px 35px rgba(0,0,0,0.25);
     animation:float 4s ease-in-out infinite;
 }
 
 @keyframes float{
-    0%{transform:translateY(0px);}
-    50%{transform:translateY(-10px);}
-    100%{transform:translateY(0px);}
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-12px);}
+    100%{transform:translateY(0);}
 }
 
-header h1{
-    font-size:52px;
-    margin-bottom:15px;
-}
-
-/* SLIDING ROLE */
-.role-container{
-    width:420px;
-    overflow:hidden;
-    height:30px;
-    margin:0 auto 20px auto;
-}
-
-.role-slider{
-    display:flex;
-    transition:transform 1s ease;
+.hero-name{
+    font-size:54px;
+    font-weight:700;
+    margin-bottom:12px;
 }
 
 .role{
-    min-width:420px;
     font-size:20px;
     font-weight:500;
+    margin-bottom:20px;
+    min-height:28px;
+    transition:opacity 0.5s ease;
 }
 
-/* HERO DESCRIPTION */
 .hero-desc{
+    max-width:720px;
+    margin:0 auto;
     line-height:1.7;
-    margin-top:10px;
+    font-size:16px;
+    opacity:0.95;
 }
 
 /* STATS */
@@ -106,11 +104,12 @@ header h1{
     display:flex;
     justify-content:center;
     gap:60px;
-    margin-top:35px;
+    margin-top:40px;
 }
 
 .hero-stats h3{
-    font-size:26px;
+    font-size:28px;
+    font-weight:700;
 }
 
 .hero-stats p{
@@ -118,30 +117,17 @@ header h1{
     opacity:0.9;
 }
 
-/* SCROLL INDICATOR */
-.scroll-indicator{
-    position:absolute;
-    bottom:30px;
-    font-size:26px;
-    animation:bounce 2s infinite;
-}
-
-@keyframes bounce{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(10px);}
-}
-
 /* SECTIONS */
 section{
     padding:100px 120px;
 }
+
 h2{
     text-align:center;
     margin-bottom:50px;
     font-size:32px;
 }
 
-/* WHAT I DO */
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -153,11 +139,12 @@ h2{
     padding:30px;
     border-radius:15px;
     box-shadow:0 10px 30px rgba(0,0,0,0.05);
-    transition:0.3s;
+    transition:0.3s ease;
 }
+
 .card:hover{
     transform:translateY(-8px);
-    box-shadow:0 20px 40px rgba(102,126,234,0.2);
+    box-shadow:0 20px 40px rgba(0,0,0,0.1);
 }
 
 /* CONTACT */
@@ -169,6 +156,7 @@ h2{
     margin:0 auto;
     box-shadow:0 10px 30px rgba(0,0,0,0.05);
 }
+
 input, textarea{
     width:100%;
     padding:12px;
@@ -176,8 +164,9 @@ input, textarea{
     border-radius:8px;
     border:1px solid #ddd;
 }
+
 button{
-    background:#2563eb;
+    background:#6d28d9;
     color:white;
     padding:12px 20px;
     border:none;
@@ -185,15 +174,20 @@ button{
     cursor:pointer;
 }
 
+button:hover{
+    background:#5b21b6;
+}
+
 /* FOLLOW */
 .follow{
     text-align:center;
 }
+
 .follow a{
     margin:0 15px;
     font-size:18px;
     text-decoration:none;
-    color:#2563eb;
+    color:#6d28d9;
 }
 
 footer{
@@ -219,23 +213,13 @@ footer{
 
 <!-- HERO -->
 <header id="home">
+<div class="hero-container">
 
-<div class="hero-box">
+<img src="bitmoji.png" class="bitmoji" alt="Shridhar DT">
 
-<!-- Bitmoji -->
-<img src="bitmoji.png" class="bitmoji" alt="Shridhar Bitmoji">
+<h1 class="hero-name">Shridhar DT</h1>
 
-<h1>Shridhar DT</h1>
-
-<div class="role-container">
-<div class="role-slider" id="roleSlider">
-<div class="role">QA Automation Engineer</div>
-<div class="role">Enterprise Application Automation</div>
-<div class="role">Pywinauto Desktop UI Automation</div>
-<div class="role">Allure Reporting & Test Traceability</div>
-<div class="role">CI/CD Pipeline Integration</div>
-</div>
-</div>
+<div class="role" id="roleText">QA Automation Engineer</div>
 
 <p class="hero-desc">
 I design and implement scalable automation frameworks for complex enterprise applications,
@@ -258,22 +242,97 @@ focusing on reliability, maintainability, structured reporting, and secure devel
 </div>
 
 </div>
-
-<div class="scroll-indicator">↓</div>
-
 </header>
 
+<!-- WHAT I DO -->
+<section id="what">
+<h2>What I Do</h2>
+<div class="grid">
+
+<div class="card">
+<h3>Automation Framework Architecture</h3>
+<p>Design modular, scalable automation systems using Python & PyTest.</p>
+</div>
+
+<div class="card">
+<h3>Enterprise Desktop Automation</h3>
+<p>Automate complex workflows using Pywinauto with structured validation.</p>
+</div>
+
+<div class="card">
+<h3>Allure Reporting & Debugging</h3>
+<p>Integrate Allure for detailed execution visibility and failure traceability.</p>
+</div>
+
+<div class="card">
+<h3>CI/CD Pipeline Integration</h3>
+<p>Enable continuous validation through automated CI/CD workflows.</p>
+</div>
+
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<h2>Projects</h2>
+<div class="grid">
+
+<div class="card">
+<h3>Enterprise Automation Framework</h3>
+<p>Built modular automation architecture for complex enterprise workflows.</p>
+</div>
+
+<div class="card">
+<h3>Allure Reporting Integration</h3>
+<p>Enabled structured reporting and enhanced debugging visibility.</p>
+</div>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact</h2>
+<div class="contact-box">
+<input type="text" placeholder="Name">
+<input type="email" placeholder="Email">
+<textarea rows="5" placeholder="Message"></textarea>
+<button>Send Message</button>
+</div>
+</section>
+
+<!-- FOLLOW -->
+<section class="follow">
+<h2>Follow Me</h2>
+<a href="https://linkedin.com/in/shridhar-dt-5869a8196" target="_blank">LinkedIn</a>
+<a href="https://github.com/Shridhardt" target="_blank">GitHub</a>
+<a href="mailto:shridhardt@hotmail.com">Email</a>
+</section>
+
+<footer>
+© 2026 Shridhar DT. All rights reserved.
+</footer>
+
 <script>
-let slider = document.getElementById("roleSlider");
+const roles = [
+"QA Automation Engineer",
+"Enterprise Application Automation",
+"Pywinauto Desktop UI Automation",
+"Allure Reporting & Test Traceability",
+"CI/CD Pipeline Integration"
+];
+
 let index = 0;
+const roleText = document.getElementById("roleText");
 
 setInterval(()=>{
-index++;
-if(index >= slider.children.length){
-index = 0;
-}
-slider.style.transform = "translateX(-" + (420 * index) + "px)";
-},3500);
+    roleText.style.opacity = 0;
+    setTimeout(()=>{
+        index = (index + 1) % roles.length;
+        roleText.textContent = roles[index];
+        roleText.style.opacity = 1;
+    },400);
+},3000);
 </script>
 
 </body>
