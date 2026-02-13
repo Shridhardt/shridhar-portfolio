@@ -3,7 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shridhar DT | Enterprise QA Automation Engineer</title>
+
+<title>Shridhar DT | QA Automation Engineer</title>
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="bitmoji.png">
+<link rel="shortcut icon" href="bitmoji.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -13,6 +18,7 @@
     padding:0;
     box-sizing:border-box;
     font-family:'Inter',sans-serif;
+    scroll-behavior:smooth;
 }
 
 body{
@@ -21,10 +27,7 @@ body{
     color:#111;
 }
 
-/* ===============================
-   STRONGER RAIN EFFECT
-================================ */
-
+/* RAIN EFFECT */
 #rain{
     position:fixed;
     top:0;
@@ -35,10 +38,7 @@ body{
     pointer-events:none;
 }
 
-/* ===============================
-   GLASS NAVBAR
-================================ */
-
+/* NAVBAR */
 .navbar{
     position:fixed;
     top:20px;
@@ -50,7 +50,7 @@ body{
     justify-content:space-between;
     padding:14px 28px;
     backdrop-filter:blur(15px);
-    background:rgba(255,255,255,0.6);
+    background:rgba(255,255,255,0.65);
     border-radius:50px;
     box-shadow:0 10px 40px rgba(124,58,237,0.1);
     z-index:100;
@@ -60,13 +60,19 @@ body{
     text-decoration:none;
     color:#111;
     font-weight:500;
-    margin-left:25px;
+    margin-left:20px;
+    padding:6px 14px;
+    border-radius:20px;
+    transition:0.3s;
 }
 
-/* ===============================
-   HERO
-================================ */
+.navbar a.active,
+.navbar a:hover{
+    background:#7c3aed;
+    color:#fff;
+}
 
+/* HERO */
 .hero{
     min-height:85vh;
     display:flex;
@@ -99,7 +105,6 @@ body{
     width:100%;
     height:100%;
     object-fit:cover;
-    transform:scale(1.08);
 }
 
 .hero h1{
@@ -116,13 +121,14 @@ body{
     margin-bottom:15px;
 }
 
-.hero p{
-    max-width:680px;
+.about-summary{
+    max-width:650px;
     color:#555;
     margin-bottom:35px;
     line-height:1.6;
 }
 
+/* STATS */
 .stats{
     display:flex;
     gap:60px;
@@ -140,10 +146,7 @@ body{
     color:#666;
 }
 
-/* ===============================
-   SECTION
-================================ */
-
+/* SECTIONS */
 section{
     padding:90px 20px;
     text-align:center;
@@ -152,17 +155,15 @@ section{
 }
 
 .section-title{
-    font-size:34px;
+    font-size:32px;
     margin-bottom:20px;
-    font-weight:700;
 }
 
 .section-sub{
-    max-width:700px;
+    max-width:750px;
     margin:auto;
     color:#555;
-    margin-bottom:50px;
-    line-height:1.6;
+    margin-bottom:40px;
 }
 
 .grid{
@@ -175,48 +176,51 @@ section{
 
 .card{
     background:rgba(255,255,255,0.75);
-    backdrop-filter:blur(25px);
+    backdrop-filter:blur(20px);
     padding:28px;
     border-radius:20px;
     box-shadow:0 20px 50px rgba(124,58,237,0.08);
-    transition:all 0.4s ease;
+    transition:0.4s;
 }
 
 .card:hover{
     transform:translateY(-8px);
 }
 
-/* ===============================
-   CONTACT
-================================ */
-
+/* CONTACT */
 .contact-icons{
     display:flex;
     justify-content:center;
-    gap:30px;
-    margin-top:30px;
+    gap:25px;
+    margin-top:25px;
 }
 
 .contact-icons a{
-    width:45px;
-    height:45px;
+    width:55px;
+    height:55px;
     display:flex;
     align-items:center;
     justify-content:center;
     border-radius:50%;
     background:rgba(255,255,255,0.8);
-    box-shadow:0 10px 30px rgba(124,58,237,0.1);
+    box-shadow:0 10px 30px rgba(124,58,237,0.15);
     transition:0.3s;
 }
 
 .contact-icons a:hover{
-    transform:scale(1.1);
+    transform:translateY(-5px) scale(1.1);
+    background:#7c3aed;
+}
+
+.contact-icons a:hover svg{
+    fill:#fff;
 }
 
 svg{
-    width:22px;
-    height:22px;
+    width:24px;
+    height:24px;
     fill:#7c3aed;
+    transition:0.3s;
 }
 </style>
 </head>
@@ -225,176 +229,152 @@ svg{
 <canvas id="rain"></canvas>
 
 <nav class="navbar">
-    <strong>Shridhar DT</strong>
-    <div>
-        <a href="#home">Home</a>
-        <a href="#expertise">Expertise</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </div>
+<strong>Shridhar DT</strong>
+<div>
+<a href="#home" class="nav-link active">Home</a>
+<a href="#expertise" class="nav-link">Expertise</a>
+<a href="#projects" class="nav-link">Projects</a>
+<a href="#contact" class="nav-link">Contact</a>
+</div>
 </nav>
 
 <section class="hero" id="home">
-    <div class="avatar">
-        <img src="bitmoji.png" alt="Shridhar">
-    </div>
+<div class="avatar">
+<img src="bitmoji.png" alt="Shridhar">
+</div>
 
-    <h1>Shridhar DT</h1>
-    <div class="typing" id="typing"></div>
+<h1>Shridhar DT</h1>
+<div class="typing" id="typing"></div>
 
-    <p>
-        Enterprise QA Automation Engineer specializing in scalable test frameworks,
-        CI/CD automation pipelines, structured reporting, and production-grade reliability.
-    </p>
+<p class="about-summary">
+QA Automation Engineer specializing in scalable test frameworks,
+CI/CD-integrated execution, and structured reporting systems.
+Focused on reliability and enterprise-grade automation quality.
+</p>
 
-    <div class="stats">
-        <div class="stat">4+<span>Years Experience</span></div>
-        <div class="stat">100+<span>Automation Scripts</span></div>
-        <div class="stat">Enterprise<span>Production Ready</span></div>
-    </div>
+<div class="stats">
+<div class="stat">4+<span>Years Experience</span></div>
+<div class="stat">100+<span>Automation Scripts</span></div>
+<div class="stat">Enterprise<span>Production Ready</span></div>
+</div>
 </section>
 
 <section id="expertise">
-    <h2 class="section-title">Technical Experience</h2>
-    <p class="section-sub">
-        Designed maintainable automation frameworks using Python & PyTest,
-        integrated Allure reporting for traceability, and implemented
-        CI/CD test execution using Azure DevOps pipelines.
-    </p>
+<h2 class="section-title">Technical Experience</h2>
+<p class="section-sub">
+Python & PyTest framework engineering, Allure reporting integration,
+and Azure DevOps CI/CD automation pipelines.
+</p>
 
-    <div class="grid">
-        <div class="card">
-            <h3>Automation Framework Engineering</h3>
-            <p>Modular test design, Page Object Model, reusable components,
-            dependency isolation, structured logging.</p>
-        </div>
+<div class="grid">
+<div class="card">
+<h3>Automation Framework</h3>
+<p>Modular architecture using Page Object Model, reusable utilities, structured logging.</p>
+</div>
 
-        <div class="card">
-            <h3>Reporting & Traceability</h3>
-            <p>Allure reporting integration, step-level execution insights,
-            failure diagnostics, regression visibility.</p>
-        </div>
+<div class="card">
+<h3>Reporting</h3>
+<p>Step-level traceability with Allure and structured execution diagnostics.</p>
+</div>
 
-        <div class="card">
-            <h3>CI/CD & DevOps</h3>
-            <p>Azure DevOps pipelines, automated regression triggers,
-            secure configuration handling, artifact publishing.</p>
-        </div>
-
-        <div class="card">
-            <h3>Technology Stack</h3>
-            <p>Python, JavaScript, SQL • PyTest, Cypress • Git,
-            Azure DevOps • Allure, Jira.</p>
-        </div>
-    </div>
+<div class="card">
+<h3>DevOps Integration</h3>
+<p>Secure CI/CD automation with environment configuration and artifact publishing.</p>
+</div>
+</div>
 </section>
 
 <section id="projects">
-    <h2 class="section-title">Enterprise Automation Implementation</h2>
+<h2 class="section-title">Enterprise Implementation</h2>
 
-    <div class="grid">
-        <div class="card">
-            <h3>Scalable Regression Framework</h3>
-            <p>Developed structured automation architecture improving
-            regression efficiency and maintainability.</p>
-        </div>
+<div class="grid">
+<div class="card">
+<h3>Regression Framework</h3>
+<p>Enterprise-grade automation improving stability and maintainability.</p>
+</div>
 
-        <div class="card">
-            <h3>Observability Reporting System</h3>
-            <p>Enabled centralized execution visibility through Allure,
-            enhancing defect traceability and analytics.</p>
-        </div>
+<div class="card">
+<h3>Observability Reporting</h3>
+<p>Enhanced failure diagnostics and analytics visibility.</p>
+</div>
 
-        <div class="card">
-            <h3>Secure DevOps Integration</h3>
-            <p>Automated CI/CD execution workflows ensuring continuous
-            validation and production-ready releases.</p>
-        </div>
-    </div>
+<div class="card">
+<h3>Secure Pipeline</h3>
+<p>CI/CD integrated automated validation workflows.</p>
+</div>
+</div>
 </section>
 
 <section id="contact">
-    <h2 class="section-title">Contact</h2>
-    <p class="section-sub">Let’s connect for enterprise automation collaborations.</p>
+<h2 class="section-title">Contact</h2>
+<p class="section-sub">Let's connect for automation opportunities.</p>
 
-    <div class="contact-icons">
+<div class="contact-icons">
 
-        <!-- LinkedIn -->
-        <a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank">
-            <svg viewBox="0 0 24 24">
-            <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.22 8h4.56v14H.22V8zm7.44 0h4.37v1.91h.06c.61-1.15 2.09-2.37 4.3-2.37 4.6 0 5.45 3.03 5.45 6.97V22h-4.56v-6.91c0-1.65-.03-3.78-2.3-3.78-2.3 0-2.65 1.8-2.65 3.66V22H7.66V8z"/>
-            </svg>
-        </a>
+<a href="https://github.com/Shridhardt" target="_blank" title="GitHub">
+<svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39..."/></svg>
+</a>
 
-        <!-- GitHub -->
-        <a href="https://github.com/" target="_blank">
-            <svg viewBox="0 0 24 24">
-            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387..."/>
-            </svg>
-        </a>
+<a href="https://linkedin.com/in/shridhar-dt-5869a8196" target="_blank" title="LinkedIn">
+<svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 5 3.8 6.18 2.31 6.18..."/></svg>
+</a>
 
-        <!-- Email -->
-        <a href="mailto:your@email.com">
-            <svg viewBox="0 0 24 24">
-            <path d="M12 13.065L.015 4.5h23.97L12 13.065zM12 15.135L0 6.57V19.5h24V6.57L12 15.135z"/>
-            </svg>
-        </a>
+<a href="mailto:shridhardt@hotmail.com" title="Email">
+<svg viewBox="0 0 24 24"><path d="M12 13.065L0 4.5V19.5h24V4.5L12 13.065z"/></svg>
+</a>
 
-    </div>
+</div>
+
+<p style="margin-top:20px;color:#555;font-size:14px;">
+Email: shridhardt@hotmail.com<br>
+LinkedIn: linkedin.com/in/shridhar-dt-5869a8196<br>
+GitHub: github.com/Shridhardt
+</p>
 </section>
 
 <script>
 
 /* Typing Animation */
-
 const roles=[
 "QA Automation Engineer",
-"Enterprise Application Automation",
-"CI/CD Pipeline Integration",
-"Structured Test Architecture"
+"Enterprise Automation",
+"CI/CD Integration"
 ];
 
-let i=0,j=0,current="",isDeleting=false;
+let i=0,j=0,isDeleting=false;
 const typing=document.getElementById("typing");
 
 function type(){
-current=roles[i];
+let text=roles[i];
 if(!isDeleting){
-typing.textContent=current.substring(0,j++);
-if(j>current.length){isDeleting=true;setTimeout(type,1200);return;}
+typing.textContent=text.substring(0,j++);
+if(j>text.length){isDeleting=true;setTimeout(type,1000);return;}
 }else{
-typing.textContent=current.substring(0,j--);
+typing.textContent=text.substring(0,j--);
 if(j<0){isDeleting=false;i=(i+1)%roles.length;}
 }
-setTimeout(type,isDeleting?50:90);
+setTimeout(type,isDeleting?40:80);
 }
 type();
 
 /* Rain Effect */
-
 const canvas=document.getElementById("rain");
 const ctx=canvas.getContext("2d");
 canvas.width=window.innerWidth;
 canvas.height=window.innerHeight;
 
 const drops=[];
-for(let i=0;i<350;i++){
-drops.push({
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-speed:Math.random()*2+1
-});
+for(let i=0;i<300;i++){
+drops.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,speed:Math.random()*2+1});
 }
 
 function draw(){
 ctx.clearRect(0,0,canvas.width,canvas.height);
-ctx.strokeStyle="rgba(168,85,247,0.35)";
-ctx.lineWidth=1.2;
-
+ctx.strokeStyle="rgba(168,85,247,0.3)";
 drops.forEach(d=>{
 ctx.beginPath();
 ctx.moveTo(d.x,d.y);
-ctx.lineTo(d.x,d.y+15);
+ctx.lineTo(d.x,d.y+12);
 ctx.stroke();
 d.y+=d.speed;
 if(d.y>canvas.height){d.y=0;}
@@ -402,6 +382,26 @@ if(d.y>canvas.height){d.y=0;}
 requestAnimationFrame(draw);
 }
 draw();
+
+/* Active Nav Highlight */
+const sections=document.querySelectorAll("section");
+const navLinks=document.querySelectorAll(".nav-link");
+
+window.addEventListener("scroll",()=>{
+let current="";
+sections.forEach(section=>{
+const sectionTop=section.offsetTop;
+if(pageYOffset>=sectionTop-150){
+current=section.getAttribute("id");
+}
+});
+navLinks.forEach(link=>{
+link.classList.remove("active");
+if(link.getAttribute("href")==="#"+current){
+link.classList.add("active");
+}
+});
+});
 
 </script>
 
