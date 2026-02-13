@@ -8,378 +8,289 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-    scroll-behavior:smooth;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{overflow-x:hidden;background:linear-gradient(135deg,#eef2ff,#f5f3ff,#fdf4ff);}
 
-body{
-    background: linear-gradient(135deg,#eef2ff,#f5f3ff,#faf5ff);
-    color:#333;
-}
-
-/* ================= NAV ================= */
-
+/* NAV */
 nav{
-    width:100%;
-    padding:20px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:rgba(255,255,255,0.8);
-    backdrop-filter:blur(10px);
-    position:fixed;
-    top:0;
-    z-index:1000;
+position:fixed;
+top:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,0.8);
+backdrop-filter:blur(12px);
+z-index:1000;
 }
+nav ul{display:flex;gap:30px;list-style:none;}
+nav ul li a{text-decoration:none;color:#444;font-weight:500;}
+section{padding:120px 8% 80px 8%;}
 
-nav h2{
-    font-weight:600;
+/* HERO */
+.hero{text-align:center;min-height:100vh;display:flex;align-items:center;justify-content:center;}
+.hero-card{
+background:rgba(255,255,255,0.7);
+backdrop-filter:blur(20px);
+padding:60px 80px;
+border-radius:25px;
+box-shadow:0 25px 60px rgba(124,58,237,0.15);
+max-width:850px;
 }
-
-nav ul{
-    display:flex;
-    gap:30px;
-    list-style:none;
-}
-
-nav ul li a{
-    text-decoration:none;
-    color:#444;
-    font-weight:500;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:120px 20px 80px 20px;
-    position:relative;
-}
-
 .bitmoji-wrapper{
-    width:200px;
-    height:200px;
-    margin:0 auto 30px auto;
-    border-radius:50%;
-    padding:8px;
-    background:linear-gradient(135deg,#a5b4fc,#c4b5fd);
-    box-shadow:0 15px 40px rgba(124,58,237,0.2);
+width:220px;height:220px;margin:0 auto 30px;border-radius:50%;
+padding:10px;background:linear-gradient(135deg,#c7d2fe,#ddd6fe);
+box-shadow:0 20px 50px rgba(124,58,237,0.2);
 }
+.bitmoji-wrapper img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+.hero h1{font-size:48px;color:#333;}
+.typing-text{font-size:22px;margin:15px 0;color:#7c3aed;min-height:28px;}
+.hero p{max-width:720px;margin:20px auto;color:#555;line-height:1.7;}
+.stats{margin-top:40px;display:flex;justify-content:center;gap:60px;}
+.stat h2{color:#7c3aed;}
+.stat p{color:#555;}
 
-.bitmoji-wrapper img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    border-radius:50%;
-}
-
-.hero h1{
-    font-size:50px;
-    font-weight:700;
-}
-
-.typing-text{
-    font-size:22px;
-    font-weight:500;
-    margin:15px 0;
-    color:#5b21b6;
-    min-height:30px;
-}
-
-.hero p{
-    max-width:750px;
-    margin:auto;
-    line-height:1.6;
-    color:#555;
-}
-
-.stats{
-    margin-top:40px;
-    display:flex;
-    justify-content:center;
-    gap:80px;
-}
-
-.stat h2{
-    color:#6d28d9;
-}
-
-section{
-    padding:100px 10%;
-}
-
-/* ================= WHAT I DO ================= */
-
+/* WHAT I DO */
+.section-title{text-align:center;font-size:36px;margin-bottom:50px;color:#333;}
 .cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-    margin-top:40px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
 }
-
 .card{
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.05);
-    transition:0.3s;
+background:white;
+padding:30px;
+border-radius:18px;
+box-shadow:0 15px 40px rgba(124,58,237,0.08);
+transition:0.3s;
 }
-
 .card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 15px 40px rgba(0,0,0,0.1);
+transform:translateY(-8px);
+box-shadow:0 20px 50px rgba(124,58,237,0.15);
 }
+.card h3{margin-bottom:15px;color:#7c3aed;}
+.card p{color:#555;line-height:1.6;}
 
-.card h3{
-    margin-bottom:15px;
-    color:#5b21b6;
-}
-
-/* ================= PROJECTS ================= */
-
+/* PROJECTS */
 .project-card{
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.05);
-    transition:0.3s;
+background:white;
+padding:30px;
+border-radius:18px;
+box-shadow:0 15px 40px rgba(0,0,0,0.05);
+margin-bottom:30px;
+}
+.project-card h3{color:#7c3aed;margin-bottom:10px;}
+.project-card p{color:#555;margin-bottom:10px;}
+.project-card button{
+padding:8px 18px;
+border:none;
+background:#7c3aed;
+color:white;
+border-radius:8px;
+cursor:pointer;
+}
+.project-details{
+display:none;
+margin-top:15px;
+color:#555;
+line-height:1.6;
 }
 
-.project-card:hover{
-    transform:scale(1.03);
+/* CONTACT */
+.contact{text-align:center;}
+.contact a{
+display:inline-block;
+margin:10px 15px;
+padding:10px 20px;
+background:#7c3aed;
+color:white;
+text-decoration:none;
+border-radius:8px;
 }
 
-.project-card h3{
-    margin-bottom:10px;
-    color:#6d28d9;
-}
-
-/* ================= CONTACT ================= */
-
-.contact form{
-    max-width:600px;
-    margin:auto;
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-}
-
-.contact input,
-.contact textarea{
-    padding:12px;
-    border-radius:8px;
-    border:1px solid #ddd;
-}
-
-.contact button{
-    padding:12px;
-    border:none;
-    background:#6d28d9;
-    color:white;
-    border-radius:8px;
-    cursor:pointer;
-}
-
-.contact button:hover{
-    background:#5b21b6;
-}
-
-/* ================= FOLLOW ================= */
-
-.follow{
-    text-align:center;
-}
-
-.follow a{
-    margin:0 15px;
-    font-size:22px;
-    text-decoration:none;
-    color:#6d28d9;
-}
-
+/* FOOTER */
 footer{
-    text-align:center;
-    padding:20px;
-    background:#f3f4f6;
-    margin-top:40px;
+text-align:center;
+padding:30px;
+background:#f3f4f6;
+color:#555;
 }
+
+/* PARTICLES */
+canvas{position:fixed;top:0;left:0;z-index:-1;}
 
 </style>
 </head>
+
 <body>
 
+<canvas id="particles"></canvas>
+
 <nav>
-    <h2>Shridhar DT</h2>
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#what">What I Do</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+<h2>Shridhar DT</h2>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#what">What I Do</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 </nav>
 
-<!-- ================= HERO ================= -->
-
-<section class="hero" id="home">
-
-<div>
-    <div class="bitmoji-wrapper">
-        <img src="bitmoji.png" alt="Shridhar">
-    </div>
-
-    <h1>Shridhar DT</h1>
-    <div class="typing-text" id="typing"></div>
-
-    <p>
-        I design and implement scalable automation frameworks for complex enterprise applications,
-        focusing on reliability, maintainability, structured reporting, and secure development practices.
-    </p>
-
-    <div class="stats">
-        <div class="stat">
-            <h2>4+</h2>
-            <p>Years Experience</p>
-        </div>
-        <div class="stat">
-            <h2>100+</h2>
-            <p>Automation Scripts</p>
-        </div>
-        <div class="stat">
-            <h2>Enterprise</h2>
-            <p>Production Ready</p>
-        </div>
-    </div>
+<!-- HERO -->
+<section class="hero">
+<div class="hero-card">
+<div class="bitmoji-wrapper">
+<img src="bitmoji.png" alt="Shridhar">
 </div>
-
+<h1>Shridhar DT</h1>
+<div class="typing-text" id="typing"></div>
+<p>
+I design and implement scalable automation frameworks for complex enterprise applications,
+focusing on reliability, maintainability, structured reporting, and secure development practices.
+</p>
+<div class="stats">
+<div class="stat"><h2>4+</h2><p>Years Experience</p></div>
+<div class="stat"><h2>100+</h2><p>Automation Scripts</p></div>
+<div class="stat"><h2>Enterprise</h2><p>Production Ready</p></div>
+</div>
+</div>
 </section>
 
-<!-- ================= WHAT I DO ================= -->
-
+<!-- WHAT I DO -->
 <section id="what">
-<h2>What I Do</h2>
-
+<h2 class="section-title">What I Do</h2>
 <div class="cards">
-
 <div class="card">
 <h3>Automation Framework Design</h3>
-<p>Design modular scalable automation frameworks using Python & Pywinauto with maintainable architecture.</p>
+<p>Build modular, scalable automation architectures using Python & PyTest for enterprise-grade applications.</p>
 </div>
-
 <div class="card">
-<h3>Enterprise Desktop Automation</h3>
-<p>Automate complex enterprise desktop workflows with dynamic element handling and robust validations.</p>
+<h3>Desktop UI Automation</h3>
+<p>Advanced automation using Pywinauto for Windows-based enterprise workflows and validations.</p>
 </div>
-
 <div class="card">
 <h3>Allure Reporting Integration</h3>
-<p>Integrate structured reporting with step-level traceability and detailed failure debugging.</p>
+<p>Detailed execution traceability with step-level logs, screenshots, and failure analytics.</p>
 </div>
-
 <div class="card">
-<h3>CI/CD Pipeline Integration</h3>
-<p>Integrate automation suites into CI/CD pipelines ensuring stable and continuous execution.</p>
+<h3>CI/CD Integration</h3>
+<p>Pipeline integration with automated test execution for continuous validation and deployment readiness.</p>
 </div>
-
 </div>
 </section>
 
-<!-- ================= PROJECTS ================= -->
-
+<!-- PROJECTS -->
 <section id="projects">
-<h2>Projects</h2>
-
-<div class="cards">
+<h2 class="section-title">Projects</h2>
 
 <div class="project-card">
-<h3>Enterprise Automation Framework</h3>
-<p>Built scalable framework with logging, reporting and modular test architecture.</p>
+<h3>Enterprise Desktop Automation Framework</h3>
+<p>Modular automation framework for complex enterprise modules.</p>
+<button onclick="toggleDetails(this)">View Details</button>
+<div class="project-details">
+Designed reusable test architecture, integrated Allure reports, implemented structured logging, and improved regression efficiency.
+</div>
 </div>
 
 <div class="project-card">
 <h3>Allure Reporting Enhancement</h3>
-<p>Improved execution visibility and root cause analysis with structured reporting.</p>
+<p>Enhanced debugging and execution visibility.</p>
+<button onclick="toggleDetails(this)">View Details</button>
+<div class="project-details">
+Configured Allure step annotations, failure traceability, execution screenshots, and improved root cause analysis time.
+</div>
 </div>
 
 <div class="project-card">
 <h3>Secure Credential Refactoring</h3>
-<p>Implemented environment-based configuration and removed hardcoded secrets.</p>
+<p>Security-focused repository improvements.</p>
+<button onclick="toggleDetails(this)">View Details</button>
+<div class="project-details">
+Removed hardcoded credentials, implemented environment-based configuration, and ensured cybersecurity compliance.
+</div>
 </div>
 
-</div>
 </section>
 
-<!-- ================= CONTACT ================= -->
-
+<!-- CONTACT -->
 <section id="contact" class="contact">
-<h2>Contact Me</h2>
-
-<form>
-<input type="text" placeholder="Your Name">
-<input type="email" placeholder="Your Email">
-<textarea rows="5" placeholder="Your Message"></textarea>
-<button type="submit">Send Message</button>
-</form>
-
-</section>
-
-<!-- ================= FOLLOW ================= -->
-
-<section class="follow">
-<h2>Follow Me</h2>
-<a href="#">LinkedIn</a>
-<a href="#">GitHub</a>
-<a href="#">Twitter</a>
+<h2 class="section-title">Contact</h2>
+<a href="mailto:shridhardt@hotmail.com">Email Me</a>
+<a href="https://linkedin.com/in/shridhar-dt-5869a8196" target="_blank">LinkedIn</a>
+<a href="https://github.com/Shridhardt" target="_blank">GitHub</a>
 </section>
 
 <footer>
-© 2026 Shridhar DT. All rights reserved.
+© 2026 Shridhar DT | QA Automation Engineer
 </footer>
 
 <script>
-const roles = [
+
+/* Typing Animation */
+const roles=[
 "QA Automation Engineer",
 "Enterprise Application Automation",
 "Pywinauto Desktop UI Automation",
-"Allure Reporting & Test Traceability",
+"Allure Reporting & Traceability",
 "CI/CD Pipeline Integration"
 ];
+let i=0,j=0,current='',isDeleting=false;
+const typing=document.getElementById("typing");
+function type(){
+current=roles[i];
+typing.textContent=isDeleting?current.substring(0,j--):current.substring(0,j++);
+if(!isDeleting && j===current.length)setTimeout(()=>isDeleting=true,1200);
+if(isDeleting && j===0){isDeleting=false;i=(i+1)%roles.length;}
+setTimeout(type,isDeleting?40:70);
+}
+type();
 
-let i = 0;
-let j = 0;
-let currentRole = '';
-let isDeleting = false;
-const typingElement = document.getElementById("typing");
-
-function typeEffect(){
-currentRole = roles[i];
-
-if(isDeleting){
-typingElement.textContent = currentRole.substring(0,j--);
-}else{
-typingElement.textContent = currentRole.substring(0,j++);
+/* Toggle Project Details */
+function toggleDetails(btn){
+const details=btn.nextElementSibling;
+details.style.display=details.style.display==="block"?"none":"block";
 }
 
-if(!isDeleting && j === currentRole.length){
-setTimeout(()=> isDeleting = true, 1200);
+/* Particles */
+const canvas=document.getElementById("particles");
+const ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+let particles=[];
+class Particle{
+constructor(){
+this.x=Math.random()*canvas.width;
+this.y=Math.random()*canvas.height;
+this.size=Math.random()*3+1;
+this.speedX=Math.random()*0.5-0.25;
+this.speedY=Math.random()*0.5-0.25;
 }
-
-if(isDeleting && j === 0){
-isDeleting = false;
-i = (i + 1) % roles.length;
+update(){
+this.x+=this.speedX;
+this.y+=this.speedY;
+if(this.x<0||this.x>canvas.width)this.speedX*=-1;
+if(this.y<0||this.y>canvas.height)this.speedY*=-1;
 }
-
-setTimeout(typeEffect, isDeleting ? 40 : 70);
+draw(){
+ctx.fillStyle="rgba(124,58,237,0.2)";
+ctx.beginPath();
+ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
+ctx.fill();
 }
+}
+function init(){
+particles=[];
+for(let i=0;i<80;i++)particles.push(new Particle());
+}
+function animate(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+particles.forEach(p=>{p.update();p.draw();});
+requestAnimationFrame(animate);
+}
+init();
+animate();
 
-typeEffect();
 </script>
 
 </body>
