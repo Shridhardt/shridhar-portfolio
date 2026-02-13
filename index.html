@@ -4,106 +4,118 @@
     <title>Shridhar DT | QA Automation Engineer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #0f172a, #1e293b);
             color: white;
-            scroll-behavior: smooth;
         }
 
         nav {
             display: flex;
             justify-content: space-between;
-            padding: 20px 80px;
-            background-color: rgba(0,0,0,0.3);
+            padding: 20px 100px;
             position: sticky;
             top: 0;
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(10px);
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 20px;
+            margin-left: 25px;
             font-weight: 500;
         }
 
-        nav a:hover {
-            color: #38bdf8;
-        }
+        nav a:hover { color: #38bdf8; }
 
         header {
             text-align: center;
-            padding: 120px 20px;
+            padding: 140px 20px 120px;
         }
 
         header h1 {
-            font-size: 48px;
+            font-size: 52px;
             color: #38bdf8;
         }
 
         header p {
             margin-top: 15px;
-            font-size: 18px;
+            font-size: 20px;
             color: #cbd5e1;
         }
 
         .btn {
             display: inline-block;
-            margin-top: 30px;
-            padding: 12px 25px;
-            background-color: #38bdf8;
+            margin-top: 35px;
+            padding: 14px 28px;
+            background: #38bdf8;
             color: #0f172a;
-            border-radius: 30px;
+            border-radius: 40px;
             text-decoration: none;
             font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #0ea5e9;
         }
 
         section {
-            padding: 80px 120px;
+            padding: 80px 140px;
         }
 
         h2 {
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            color: #38bdf8;
+            font-size: 28px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .stats div h3 {
+            font-size: 32px;
             color: #38bdf8;
         }
 
         .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
         .card {
             background: #1e293b;
-            padding: 25px;
+            padding: 30px;
             border-radius: 15px;
             transition: 0.3s;
         }
 
         .card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-10px);
             background: #334155;
         }
 
-        ul {
-            line-height: 2;
+        .contact {
+            text-align: center;
+            padding: 60px;
+            background: #0f172a;
         }
 
         footer {
             text-align: center;
             padding: 30px;
-            background: #0f172a;
-            margin-top: 60px;
+            background: #020617;
             color: #94a3b8;
         }
     </style>
@@ -116,53 +128,81 @@
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
     </div>
 </nav>
 
 <header>
-    <h1>Shridhar DT</h1>
-    <p>QA Automation Engineer | Python | PyTest | Allure Reports</p>
-    <a href="#projects" class="btn">View Projects</a>
+    <h1>QA Automation Engineer</h1>
+    <p>Building scalable Python automation frameworks with structured reporting and secure practices.</p>
+    <a href="#projects" class="btn">Explore My Work</a>
 </header>
 
 <section id="about">
     <h2>About Me</h2>
     <p>
-        I design and build scalable automation frameworks for enterprise applications.
-        My expertise includes Python-based automation, structured test architecture,
-        Allure report integration, and secure configuration management.
+        I specialize in designing and implementing automation frameworks for enterprise applications.
+        My expertise lies in Python-based testing, PyTest architecture, Allure reporting integration,
+        and secure configuration management.
     </p>
+
+    <div class="stats">
+        <div>
+            <h3>Automation</h3>
+            <p>Framework Design</p>
+        </div>
+        <div>
+            <h3>Allure</h3>
+            <p>Reporting Integration</p>
+        </div>
+        <div>
+            <h3>Secure</h3>
+            <p>Credential Management</p>
+        </div>
+    </div>
 </section>
 
 <section id="skills">
-    <h2>Technical Skills</h2>
-    <ul>
-        <li>Python Automation</li>
-        <li>PyTest Framework</li>
-        <li>Allure Reports Integration</li>
-        <li>Git & Version Control</li>
-        <li>Automation Framework Design</li>
-    </ul>
+    <h2>Technical Expertise</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Automation Development</h3>
+            <p>Designing modular, reusable, and scalable automation architectures using Python & PyTest.</p>
+        </div>
+        <div class="card">
+            <h3>Test Reporting</h3>
+            <p>Integrating Allure Reports for enhanced visibility and failure traceability.</p>
+        </div>
+        <div class="card">
+            <h3>Secure Practices</h3>
+            <p>Environment-based configuration and removal of hardcoded credentials.</p>
+        </div>
+    </div>
 </section>
 
 <section id="projects">
-    <h2>Projects</h2>
+    <h2>Highlighted Projects</h2>
     <div class="cards">
         <div class="card">
             <h3>Enterprise Automation Framework</h3>
-            <p>Designed modular automation architecture with reusable components and structured reporting.</p>
+            <p>Built scalable test architecture for complex enterprise modules with structured logging.</p>
         </div>
-
         <div class="card">
-            <h3>Allure Reporting Integration</h3>
-            <p>Integrated Allure with PyTest to generate detailed execution reports and failure traceability.</p>
+            <h3>Advanced Reporting Integration</h3>
+            <p>Improved debugging efficiency using detailed Allure reporting and execution insights.</p>
         </div>
-
         <div class="card">
-            <h3>Secure Credential Refactoring</h3>
-            <p>Removed hardcoded secrets and implemented environment-based configuration management.</p>
+            <h3>Secure Repository Refactoring</h3>
+            <p>Enhanced repository security through environment-based credential management.</p>
         </div>
     </div>
+</section>
+
+<section id="contact" class="contact">
+    <h2>Let’s Connect</h2>
+    <p>Email: your-email@example.com</p>
+    <p>LinkedIn: your-linkedin-link</p>
+    <p>GitHub: your-github-link</p>
 </section>
 
 <footer>
