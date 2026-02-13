@@ -13,12 +13,6 @@ body{
     font-family:'Poppins',sans-serif;
     background:linear-gradient(135deg,#0f172a,#1e293b);
     color:white;
-    transition:0.4s;
-}
-
-.light{
-    background:#f3f6fb;
-    color:#1e293b;
 }
 
 nav{
@@ -37,14 +31,8 @@ nav a{
     margin-left:25px;
 }
 
-.toggle{
-    cursor:pointer;
-    margin-left:25px;
-    font-size:18px;
-}
-
 header{
-    height:100vh;
+    height:80vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -63,19 +51,6 @@ h1{
     color:#cbd5e1;
 }
 
-.btn{
-    margin-top:30px;
-    padding:12px 30px;
-    border-radius:30px;
-    background:#38bdf8;
-    color:#0f172a;
-    text-decoration:none;
-    font-weight:600;
-    transition:0.3s;
-}
-
-.btn:hover{transform:scale(1.05);}
-
 section{
     padding:100px 120px;
 }
@@ -85,31 +60,51 @@ h2{
     color:#38bdf8;
 }
 
-.glass{
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.card{
     background:rgba(255,255,255,0.05);
     backdrop-filter:blur(12px);
+    padding:30px;
     border-radius:15px;
-    padding:25px;
-    margin-bottom:25px;
+    cursor:pointer;
     transition:0.3s;
 }
 
-.glass:hover{
+.card:hover{
     background:rgba(255,255,255,0.1);
     transform:translateY(-5px);
 }
 
-.timeline{
-    border-left:3px solid #38bdf8;
-    padding-left:25px;
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+    justify-content:center;
+    align-items:center;
+    z-index:20;
 }
 
-.timeline div{
-    margin-bottom:40px;
+.modal-content{
+    background:#1e293b;
+    padding:40px;
+    border-radius:15px;
+    max-width:600px;
+    width:90%;
 }
 
-.counter{
-    font-size:40px;
+.close{
+    text-align:right;
+    cursor:pointer;
+    font-weight:bold;
     color:#38bdf8;
 }
 
@@ -117,17 +112,6 @@ footer{
     text-align:center;
     padding:30px;
     background:#0f172a;
-}
-
-.reveal{
-    opacity:0;
-    transform:translateY(20px);
-    transition:1s;
-}
-
-.reveal.active{
-    opacity:1;
-    transform:translateY(0);
 }
 </style>
 </head>
@@ -137,110 +121,125 @@ footer{
 <nav>
 <div><strong>Shridhar DT</strong></div>
 <div>
-<a href="#about">About</a>
 <a href="#experience">Experience</a>
 <a href="#projects">Projects</a>
 <a href="#contact">Contact</a>
-<span class="toggle" onclick="toggleMode()">🌙</span>
 </div>
 </nav>
 
 <header>
 <h1>QA Automation Engineer</h1>
 <p class="subtitle">
-I design scalable Python automation frameworks with structured reporting,
-clean architecture, and secure development practices.
+Designing scalable Python automation frameworks with structured reporting and secure architecture.
 </p>
-<a href="#projects" class="btn">Explore Work</a>
-<a href="resume.pdf" download class="btn">Download Resume</a>
 </header>
 
-<section id="about" class="reveal">
-<h2>About Me</h2>
-<div class="glass">
-Automation specialist focused on PyTest architecture, Allure reporting integration,
-and enterprise-grade test stability.
-</div>
-
-<div style="display:flex;gap:60px;margin-top:40px;">
-<div>
-<div class="counter" data-target="3">0</div>
-<p>Years Experience</p>
-</div>
-<div>
-<div class="counter" data-target="50">0</div>
-<p>Automation Scripts</p>
-</div>
-</div>
-</section>
-
-<section id="experience" class="reveal">
+<section id="experience">
 <h2>Experience</h2>
-<div class="timeline">
-<div>
+<div class="cards">
+<div class="card" onclick="openModal('exp1')">
 <h3>QA Automation Engineer</h3>
-<p>Designed enterprise automation frameworks using Python & PyTest.</p>
+<p>Enterprise Automation Architecture</p>
 </div>
-<div>
+
+<div class="card" onclick="openModal('exp2')">
 <h3>Reporting Enhancement</h3>
-<p>Integrated Allure reports improving debugging visibility.</p>
+<p>Allure Integration & Traceability</p>
 </div>
 </div>
 </section>
 
-<section id="projects" class="reveal">
+<section id="projects">
 <h2>Projects</h2>
-<div class="glass">
-<h3>Automation Framework Architecture</h3>
-<p>Built modular and scalable automation architecture improving regression reliability.</p>
+<div class="cards">
+<div class="card" onclick="openModal('proj1')">
+<h3>Automation Framework Design</h3>
+<p>Modular & Scalable Architecture</p>
 </div>
 
-<div class="glass">
+<div class="card" onclick="openModal('proj2')">
 <h3>Secure Configuration Initiative</h3>
-<p>Implemented environment-based credential management for enhanced security compliance.</p>
+<p>Environment-based Credential Handling</p>
+</div>
 </div>
 </section>
 
-<section id="contact" class="reveal">
+<section id="contact">
 <h2>Contact</h2>
-<a href="mailto:shridhardt@hotmail.com" class="btn">Email</a>
-<a href="https://linkedin.com/in/shridhar-dt-5869a8196" target="_blank" class="btn">LinkedIn</a>
-<a href="https://github.com/Shridhardt" target="_blank" class="btn">GitHub</a>
+<a href="mailto:shridhardt@hotmail.com" style="color:#38bdf8;">Email</a> |
+<a href="https://linkedin.com/in/shridhar-dt-5869a8196" target="_blank" style="color:#38bdf8;">LinkedIn</a> |
+<a href="https://github.com/Shridhardt" target="_blank" style="color:#38bdf8;">GitHub</a>
 </section>
 
 <footer>
 © 2026 Shridhar DT
 </footer>
 
+<!-- Modals -->
+
+<div id="exp1" class="modal">
+<div class="modal-content">
+<div class="close" onclick="closeModal('exp1')">Close</div>
+<h3>Enterprise Automation Architecture</h3>
+<p>
+Approach:
+• Designed modular framework using PyTest
+• Implemented Page Object Model structure
+• Improved test maintainability & reusability
+• Reduced regression instability
+</p>
+</div>
+</div>
+
+<div id="exp2" class="modal">
+<div class="modal-content">
+<div class="close" onclick="closeModal('exp2')">Close</div>
+<h3>Allure Reporting Integration</h3>
+<p>
+Approach:
+• Integrated Allure with PyTest
+• Enabled detailed execution traceability
+• Enhanced debugging visibility
+• Improved failure analysis speed
+</p>
+</div>
+</div>
+
+<div id="proj1" class="modal">
+<div class="modal-content">
+<div class="close" onclick="closeModal('proj1')">Close</div>
+<h3>Automation Framework Design</h3>
+<p>
+Approach:
+• Created reusable automation modules
+• Structured logging & configuration
+• Designed scalable test architecture
+• Focused on clean code practices
+</p>
+</div>
+</div>
+
+<div id="proj2" class="modal">
+<div class="modal-content">
+<div class="close" onclick="closeModal('proj2')">Close</div>
+<h3>Secure Configuration Initiative</h3>
+<p>
+Approach:
+• Removed hardcoded credentials
+• Implemented environment variables
+• Strengthened repository compliance
+• Improved secure coding practices
+</p>
+</div>
+</div>
+
 <script>
-function toggleMode(){
-document.body.classList.toggle("light");
+function openModal(id){
+document.getElementById(id).style.display="flex";
 }
-
-window.addEventListener('scroll',function(){
-document.querySelectorAll('.reveal').forEach(el=>{
-if(el.getBoundingClientRect().top<window.innerHeight-100){
-el.classList.add('active');
+function closeModal(id){
+document.getElementById(id).style.display="none";
 }
-});
-});
-
-const counters=document.querySelectorAll('.counter');
-counters.forEach(counter=>{
-counter.innerText='0';
-const update=()=>{
-const target=+counter.getAttribute('data-target');
-const c=+counter.innerText;
-const inc=target/100;
-if(c<target){
-counter.innerText=`${Math.ceil(c+inc)}`;
-setTimeout(update,20);
-}else{
-counter.innerText=target;
-}
-};
-update();
-});
 </script>
 
 </body>
