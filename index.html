@@ -7,6 +7,7 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
+
 body{
     font-family:'Poppins',sans-serif;
     background:#f4f6fb;
@@ -37,13 +38,22 @@ header{
     height:100vh;
     background:linear-gradient(135deg,#667eea,#764ba2);
     display:flex;
-    flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
     color:white;
     padding:0 20px;
+    position:relative;
 }
+
+.hero-box{
+    backdrop-filter:blur(10px);
+    background:rgba(255,255,255,0.08);
+    padding:50px 40px;
+    border-radius:20px;
+    max-width:850px;
+}
+
 header h1{
     font-size:52px;
     margin-bottom:15px;
@@ -51,11 +61,10 @@ header h1{
 
 /* SLIDING ROLE */
 .role-container{
-    width:400px;
+    width:420px;
     overflow:hidden;
     height:30px;
-    margin-bottom:20px;
-    position:relative;
+    margin:0 auto 20px auto;
 }
 
 .role-slider{
@@ -64,13 +73,48 @@ header h1{
 }
 
 .role{
-    min-width:400px;
-    text-align:center;
+    min-width:420px;
     font-size:20px;
     font-weight:500;
 }
 
-/* SECTION */
+/* HERO DESCRIPTION */
+.hero-desc{
+    line-height:1.7;
+    margin-top:10px;
+}
+
+/* STATS */
+.hero-stats{
+    display:flex;
+    justify-content:center;
+    gap:60px;
+    margin-top:35px;
+}
+
+.hero-stats h3{
+    font-size:26px;
+}
+
+.hero-stats p{
+    font-size:14px;
+    opacity:0.9;
+}
+
+/* SCROLL INDICATOR */
+.scroll-indicator{
+    position:absolute;
+    bottom:30px;
+    font-size:26px;
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(10px);}
+}
+
+/* SECTIONS */
 section{
     padding:100px 120px;
 }
@@ -97,11 +141,6 @@ h2{
 .card:hover{
     transform:translateY(-8px);
     box-shadow:0 20px 40px rgba(102,126,234,0.2);
-}
-
-.icon{
-    font-size:40px;
-    margin-bottom:20px;
 }
 
 /* PROJECTS */
@@ -145,32 +184,6 @@ button{
     color:#2563eb;
 }
 
-/* MODAL */
-.modal{
-    display:none;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.6);
-    justify-content:center;
-    align-items:center;
-}
-.modal-content{
-    background:white;
-    padding:40px;
-    border-radius:15px;
-    max-width:700px;
-    width:90%;
-}
-.close{
-    text-align:right;
-    cursor:pointer;
-    font-weight:bold;
-    color:#2563eb;
-}
-
 footer{
     text-align:center;
     padding:30px;
@@ -194,6 +207,9 @@ footer{
 
 <!-- HERO -->
 <header id="home">
+
+<div class="hero-box">
+
 <h1>Shridhar DT</h1>
 
 <div class="role-container">
@@ -206,39 +222,54 @@ footer{
 </div>
 </div>
 
-<p>
+<p class="hero-desc">
 I design and implement scalable automation frameworks for complex enterprise applications,
 focusing on reliability, maintainability, structured reporting, and secure development practices.
 </p>
+
+<div class="hero-stats">
+<div>
+<h3>3+</h3>
+<p>Years Experience</p>
+</div>
+<div>
+<h3>50+</h3>
+<p>Automation Scripts</p>
+</div>
+<div>
+<h3>Enterprise</h3>
+<p>Production Ready</p>
+</div>
+</div>
+
+</div>
+
+<div class="scroll-indicator">↓</div>
+
 </header>
 
 <!-- WHAT I DO -->
 <section id="what">
 <h2>What I Do</h2>
-
 <div class="grid">
 
 <div class="card">
-<div class="icon">⚙️</div>
 <h3>Automation Framework Architecture</h3>
 <p>Design modular, scalable automation systems using Python & PyTest.</p>
 </div>
 
 <div class="card">
-<div class="icon">🖥️</div>
 <h3>Enterprise Desktop Automation</h3>
 <p>Automate complex workflows using Pywinauto with structured validation.</p>
 </div>
 
 <div class="card">
-<div class="icon">📊</div>
-<h3>Allure Reporting & Traceability</h3>
-<p>Integrate Allure for detailed execution visibility and debugging analysis.</p>
+<h3>Allure Reporting & Debugging</h3>
+<p>Integrate Allure for detailed execution visibility and failure traceability.</p>
 </div>
 
 <div class="card">
-<div class="icon">🚀</div>
-<h3>CI/CD Pipeline Integration</h3>
+<h3>CI/CD Pipeline Enablement</h3>
 <p>Enable continuous validation through automated CI/CD workflows.</p>
 </div>
 
@@ -249,17 +280,15 @@ focusing on reliability, maintainability, structured reporting, and secure devel
 <section id="projects">
 <h2>Projects</h2>
 <div class="grid">
-
-<div class="card project-card" onclick="openModal('p1')">
+<div class="card project-card">
 <h3>Enterprise Automation Framework</h3>
-<p>Click to view architecture details</p>
+<p>Modular automation architecture for complex enterprise workflows.</p>
 </div>
 
-<div class="card project-card" onclick="openModal('p2')">
+<div class="card project-card">
 <h3>Allure Reporting Integration</h3>
-<p>Click to view implementation</p>
+<p>Structured reporting with enhanced debugging visibility.</p>
 </div>
-
 </div>
 </section>
 
@@ -286,32 +315,7 @@ focusing on reliability, maintainability, structured reporting, and secure devel
 © 2026 Shridhar DT. All rights reserved.
 </footer>
 
-<!-- MODALS -->
-<div id="p1" class="modal">
-<div class="modal-content">
-<div class="close" onclick="closeModal('p1')">Close</div>
-<h3>Enterprise Automation Framework</h3>
-<p>Designed modular architecture using PyTest and integrated structured reporting via Allure.</p>
-</div>
-</div>
-
-<div id="p2" class="modal">
-<div class="modal-content">
-<div class="close" onclick="closeModal('p2')">Close</div>
-<h3>Allure Reporting Integration</h3>
-<p>Enabled detailed test execution visibility and improved debugging efficiency.</p>
-</div>
-</div>
-
 <script>
-function openModal(id){
-document.getElementById(id).style.display="flex";
-}
-function closeModal(id){
-document.getElementById(id).style.display="none";
-}
-
-/* Sliding role animation */
 let slider = document.getElementById("roleSlider");
 let index = 0;
 
@@ -320,7 +324,7 @@ index++;
 if(index >= slider.children.length){
 index = 0;
 }
-slider.style.transform = "translateX(-" + (400 * index) + "px)";
+slider.style.transform = "translateX(-" + (420 * index) + "px)";
 },3500);
 </script>
 
