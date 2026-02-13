@@ -48,6 +48,9 @@
             margin-top: 15px;
             font-size: 20px;
             color: #cbd5e1;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .btn {
@@ -64,6 +67,7 @@
 
         .btn:hover {
             background: #0ea5e9;
+            transform: scale(1.05);
         }
 
         section {
@@ -74,18 +78,6 @@
             margin-bottom: 40px;
             color: #38bdf8;
             font-size: 28px;
-        }
-
-        .stats {
-            display: flex;
-            justify-content: space-around;
-            text-align: center;
-            margin-top: 60px;
-        }
-
-        .stats div h3 {
-            font-size: 32px;
-            color: #38bdf8;
         }
 
         .cards {
@@ -106,10 +98,19 @@
             background: #334155;
         }
 
+        .card h3 {
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
         .contact {
             text-align: center;
-            padding: 60px;
+            padding: 80px 20px;
             background: #0f172a;
+        }
+
+        .contact .btn {
+            margin: 15px;
         }
 
         footer {
@@ -118,6 +119,12 @@
             background: #020617;
             color: #94a3b8;
         }
+
+        @media (max-width: 768px) {
+            nav { padding: 20px; }
+            section { padding: 60px 20px; }
+        }
+
     </style>
 </head>
 <body>
@@ -134,75 +141,81 @@
 
 <header>
     <h1>QA Automation Engineer</h1>
-    <p>Building scalable Python automation frameworks with structured reporting and secure practices.</p>
+    <p>
+        I design and build scalable Python automation frameworks for enterprise applications,
+        focusing on structured reporting, clean architecture, and secure development practices.
+    </p>
     <a href="#projects" class="btn">Explore My Work</a>
 </header>
 
 <section id="about">
     <h2>About Me</h2>
     <p>
-        I specialize in designing and implementing automation frameworks for enterprise applications.
-        My expertise lies in Python-based testing, PyTest architecture, Allure reporting integration,
-        and secure configuration management.
+        I specialize in automation framework development using Python and PyTest.
+        My work emphasizes modular architecture, execution traceability through Allure reports,
+        and secure configuration management practices.
+        I focus on improving regression efficiency, debugging visibility, and long-term maintainability of automation systems.
     </p>
-
-    <div class="stats">
-        <div>
-            <h3>Automation</h3>
-            <p>Framework Design</p>
-        </div>
-        <div>
-            <h3>Allure</h3>
-            <p>Reporting Integration</p>
-        </div>
-        <div>
-            <h3>Secure</h3>
-            <p>Credential Management</p>
-        </div>
-    </div>
 </section>
 
 <section id="skills">
-    <h2>Technical Expertise</h2>
+    <h2>Technical Stack</h2>
     <div class="cards">
         <div class="card">
-            <h3>Automation Development</h3>
-            <p>Designing modular, reusable, and scalable automation architectures using Python & PyTest.</p>
+            <h3>Programming & Frameworks</h3>
+            <p>Python, PyTest, Modular Test Design, Page Object Model, Structured Logging.</p>
         </div>
+
         <div class="card">
-            <h3>Test Reporting</h3>
-            <p>Integrating Allure Reports for enhanced visibility and failure traceability.</p>
+            <h3>Reporting & Analysis</h3>
+            <p>Allure Reports Integration, Execution Monitoring, Failure Traceability, Log Debugging.</p>
         </div>
+
         <div class="card">
-            <h3>Secure Practices</h3>
-            <p>Environment-based configuration and removal of hardcoded credentials.</p>
+            <h3>DevOps & Security</h3>
+            <p>Git Version Control, Environment-Based Configuration, Secure Credential Handling, CI Integration Basics.</p>
         </div>
     </div>
 </section>
 
 <section id="projects">
-    <h2>Highlighted Projects</h2>
+    <h2>Impact-Driven Projects</h2>
     <div class="cards">
         <div class="card">
-            <h3>Enterprise Automation Framework</h3>
-            <p>Built scalable test architecture for complex enterprise modules with structured logging.</p>
+            <h3>Enterprise Automation Architecture</h3>
+            <p>
+                Designed a scalable automation framework for complex enterprise modules,
+                reducing repetitive validation and improving regression stability.
+            </p>
         </div>
+
         <div class="card">
-            <h3>Advanced Reporting Integration</h3>
-            <p>Improved debugging efficiency using detailed Allure reporting and execution insights.</p>
+            <h3>Advanced Reporting System</h3>
+            <p>
+                Integrated Allure reporting to provide detailed execution insights,
+                significantly improving debugging speed and failure analysis.
+            </p>
         </div>
+
         <div class="card">
-            <h3>Secure Repository Refactoring</h3>
-            <p>Enhanced repository security through environment-based credential management.</p>
+            <h3>Security Refactoring Initiative</h3>
+            <p>
+                Removed hardcoded credentials and implemented secure environment-based configurations,
+                enhancing repository security and compliance.
+            </p>
         </div>
     </div>
 </section>
 
 <section id="contact" class="contact">
     <h2>Let’s Connect</h2>
-    <p>Email: your-email@example.com</p>
-    <p>LinkedIn: your-linkedin-link</p>
-    <p>GitHub: your-github-link</p>
+
+    <a href="mailto:shridhardt@hotmail.com" class="btn">📧 Email Me</a>
+
+    <a href="https://linkedin.com/in/shridhar-dt-5869a8196" target="_blank" class="btn">🔗 LinkedIn</a>
+
+    <a href="https://github.com/Shridhardt" target="_blank" class="btn">💻 GitHub</a>
+
 </section>
 
 <footer>
