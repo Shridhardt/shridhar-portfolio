@@ -3,11 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shridhar DT | Enterprise QA Automation Engineer</title>
+<title>Shridhar DT | QA Automation Engineer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 
 <style>
 *{
@@ -19,7 +17,7 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#f5f7ff;
+background:linear-gradient(135deg,#f6f7ff,#fdf2ff);
 color:#111;
 overflow-x:hidden;
 transition:0.4s;
@@ -28,35 +26,6 @@ transition:0.4s;
 body.dark{
 background:#0f172a;
 color:#fff;
-}
-
-/* 3D Background Canvas */
-#bg{
-position:fixed;
-top:0;
-left:0;
-z-index:-2;
-}
-
-/* Neon Grid */
-.grid-floor{
-position:fixed;
-bottom:0;
-left:0;
-width:100%;
-height:300px;
-background:linear-gradient(to top,rgba(124,58,237,0.2),transparent);
-background-size:40px 40px;
-background-image:
-linear-gradient(rgba(124,58,237,0.15) 1px, transparent 1px),
-linear-gradient(90deg, rgba(124,58,237,0.15) 1px, transparent 1px);
-animation:gridMove 6s linear infinite;
-z-index:-1;
-}
-
-@keyframes gridMove{
-from{background-position:0 0;}
-to{background-position:0 40px;}
 }
 
 /* NAVBAR */
@@ -69,7 +38,7 @@ width:90%;
 max-width:1100px;
 display:flex;
 justify-content:space-between;
-padding:15px 30px;
+padding:14px 30px;
 background:rgba(255,255,255,0.7);
 backdrop-filter:blur(15px);
 border-radius:40px;
@@ -77,7 +46,7 @@ z-index:100;
 }
 
 body.dark .nav{
-background:rgba(30,41,59,0.6);
+background:rgba(30,41,59,0.7);
 }
 
 .nav a{
@@ -99,17 +68,17 @@ padding-top:120px;
 }
 
 .avatar{
-width:160px;
-height:160px;
+width:170px;
+height:170px;
 border-radius:50%;
 overflow:hidden;
 animation:float 4s ease-in-out infinite;
-box-shadow:0 20px 50px rgba(124,58,237,0.3);
+box-shadow:0 25px 60px rgba(124,58,237,0.3);
 }
 
 @keyframes float{
 0%,100%{transform:translateY(0);}
-50%{transform:translateY(-15px);}
+50%{transform:translateY(-12px);}
 }
 
 .avatar img{
@@ -119,8 +88,8 @@ object-fit:cover;
 }
 
 .hero h1{
-font-size:46px;
-margin:15px 0;
+font-size:48px;
+margin:20px 0 10px;
 }
 
 .typing{
@@ -133,23 +102,30 @@ height:25px;
 .hero p{
 max-width:650px;
 color:#555;
+line-height:1.6;
 }
 
 body.dark .hero p{
 color:#cbd5e1;
 }
 
-/* SKILLS */
-.skills{
+/* SECTION */
+section{
 padding:100px 20px;
 text-align:center;
 }
 
+.section-title{
+font-size:32px;
+margin-bottom:40px;
+}
+
+/* SKILLS */
 .skill-bar{
 width:80%;
-max-width:700px;
-margin:20px auto;
-background:rgba(0,0,0,0.1);
+max-width:650px;
+margin:18px auto;
+background:rgba(0,0,0,0.08);
 border-radius:10px;
 overflow:hidden;
 }
@@ -166,11 +142,6 @@ transition:1.5s;
 }
 
 /* PROJECTS */
-.projects{
-padding:100px 20px;
-text-align:center;
-}
-
 .project-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -184,7 +155,6 @@ background:rgba(255,255,255,0.7);
 backdrop-filter:blur(20px);
 padding:30px;
 border-radius:20px;
-cursor:pointer;
 transition:0.4s;
 }
 
@@ -196,37 +166,7 @@ background:rgba(30,41,59,0.7);
 transform:translateY(-10px);
 }
 
-/* MODAL */
-.modal{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
-display:none;
-justify-content:center;
-align-items:center;
-}
-
-.modal-content{
-background:#fff;
-padding:40px;
-border-radius:20px;
-max-width:500px;
-}
-
-body.dark .modal-content{
-background:#1e293b;
-color:#fff;
-}
-
 /* CONTACT */
-.contact{
-padding:80px 20px;
-text-align:center;
-}
-
 .icons{
 display:flex;
 justify-content:center;
@@ -235,12 +175,13 @@ margin-top:20px;
 }
 
 .icons a{
-font-size:22px;
+font-size:16px;
 text-decoration:none;
 color:#7c3aed;
+font-weight:600;
 }
 
-/* Toggle */
+/* TOGGLE */
 .toggle{
 cursor:pointer;
 margin-left:20px;
@@ -248,9 +189,6 @@ margin-left:20px;
 </style>
 </head>
 <body>
-
-<canvas id="bg"></canvas>
-<div class="grid-floor"></div>
 
 <div class="nav">
 <strong>Shridhar DT</strong>
@@ -267,46 +205,82 @@ margin-left:20px;
 <div class="avatar">
 <img src="bitmoji.png">
 </div>
+
 <h1>Shridhar DT</h1>
+
 <div class="typing" id="typing"></div>
-<p>Enterprise QA Automation Engineer designing scalable test architectures, CI/CD automation pipelines, and observability-driven reporting systems.</p>
+
+<p>
+Enterprise QA Automation Engineer designing scalable test architectures,
+CI/CD automation pipelines, and observability-driven reporting systems.
+Focused on reliability, maintainability, and production-ready automation delivery.
+</p>
 </section>
 
-<section class="skills" id="skills">
-<h2>Technical Expertise</h2>
+<section id="skills">
+<h2 class="section-title">Technical Expertise</h2>
 
 <div class="skill-bar"><div class="skill-fill" data-width="95%"></div></div>
 <div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
 <div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
-<div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div>
+<div class="skill-bar"><div class="skill-fill" data-width="88%"></div></div>
 
 </section>
 
-<section class="projects" id="projects">
-<h2>Projects</h2>
+<section id="projects">
+<h2 class="section-title">Enterprise Automation Platform</h2>
+
 <div class="project-grid">
-<div class="card" onclick="openModal('Framework Architecture for enterprise regression automation.')">Automation Framework</div>
-<div class="card" onclick="openModal('Allure integration with structured test analytics.')">Reporting System</div>
-<div class="card" onclick="openModal('Azure CI/CD automated test pipeline orchestration.')">CI/CD Integration</div>
+
+<div class="card">
+<h3>Framework Architecture</h3>
+<p>
+Designed modular automation framework using Python & PyTest.
+Implemented Page Object Model, reusable components, structured logging,
+and dependency isolation for maintainable regression systems.
+</p>
+</div>
+
+<div class="card">
+<h3>Allure Reporting Integration</h3>
+<p>
+Integrated Allure for granular step-level traceability,
+failure diagnostics, execution analytics,
+and structured regression visibility across environments.
+</p>
+</div>
+
+<div class="card">
+<h3>CI/CD Pipeline Orchestration</h3>
+<p>
+Configured Azure DevOps pipelines enabling automated regression triggers,
+environment-based configuration,
+secure credential injection, and artifact publishing.
+</p>
+</div>
+
 </div>
 </section>
 
-<section class="contact" id="contact">
-<h2>Contact</h2>
+<section id="contact">
+<h2 class="section-title">Contact</h2>
+
 <div class="icons">
-<a href="https://linkedin.com" target="_blank">LinkedIn</a>
-<a href="https://github.com" target="_blank">GitHub</a>
+<a href="https://linkedin.com/in/YOUR-LINK" target="_blank">LinkedIn</a>
+<a href="https://github.com/YOUR-USERNAME" target="_blank">GitHub</a>
 <a href="mailto:your@email.com">Email</a>
 </div>
+
 </section>
 
-<div class="modal" id="modal">
-<div class="modal-content" id="modalContent"></div>
-</div>
-
 <script>
-// Typing
-const roles=["QA Automation Engineer","Enterprise Automation Architect","CI/CD Pipeline Specialist"];
+// Typing animation
+const roles=[
+"QA Automation Engineer",
+"Enterprise Application Automation",
+"CI/CD Pipeline Specialist"
+];
+
 let i=0,j=0,isDeleting=false;
 const el=document.getElementById("typing");
 
@@ -330,37 +304,10 @@ bar.style.width=bar.dataset.width;
 });
 });
 
-// Modal
-function openModal(text){
-document.getElementById("modal").style.display="flex";
-document.getElementById("modalContent").innerText=text;
-}
-document.getElementById("modal").onclick=()=>document.getElementById("modal").style.display="none";
-
-// Dark Mode
+// Dark mode
 function toggleMode(){
 document.body.classList.toggle("dark");
 }
-
-// THREE.JS MESH
-const scene=new THREE.Scene();
-const camera=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
-const renderer=new THREE.WebGLRenderer({canvas:document.getElementById("bg"),alpha:true});
-renderer.setSize(window.innerWidth,window.innerHeight);
-
-const geometry=new THREE.PlaneGeometry(20,20,32,32);
-const material=new THREE.MeshBasicMaterial({color:0x7c3aed,wireframe:true});
-const plane=new THREE.Mesh(geometry,material);
-scene.add(plane);
-
-camera.position.z=5;
-
-function animate(){
-requestAnimationFrame(animate);
-plane.rotation.z+=0.002;
-renderer.render(scene,camera);
-}
-animate();
 </script>
 
 </body>
