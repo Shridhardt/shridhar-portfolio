@@ -49,9 +49,26 @@ header{
 .hero-box{
     backdrop-filter:blur(10px);
     background:rgba(255,255,255,0.08);
-    padding:50px 40px;
+    padding:60px 40px;
     border-radius:20px;
     max-width:850px;
+}
+
+/* BITMOJI */
+.bitmoji{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    margin-bottom:20px;
+    border:4px solid rgba(255,255,255,0.3);
+    box-shadow:0 0 25px rgba(255,255,255,0.4);
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(-10px);}
+    100%{transform:translateY(0px);}
 }
 
 header h1{
@@ -143,11 +160,6 @@ h2{
     box-shadow:0 20px 40px rgba(102,126,234,0.2);
 }
 
-/* PROJECTS */
-.project-card{
-    cursor:pointer;
-}
-
 /* CONTACT */
 .contact-box{
     background:white;
@@ -210,6 +222,9 @@ footer{
 
 <div class="hero-box">
 
+<!-- Bitmoji -->
+<img src="bitmoji.png" class="bitmoji" alt="Shridhar Bitmoji">
+
 <h1>Shridhar DT</h1>
 
 <div class="role-container">
@@ -229,7 +244,7 @@ focusing on reliability, maintainability, structured reporting, and secure devel
 
 <div class="hero-stats">
 <div>
-<h3>3+</h3>
+<h3>4+</h3>
 <p>Years Experience</p>
 </div>
 <div>
@@ -247,73 +262,6 @@ focusing on reliability, maintainability, structured reporting, and secure devel
 <div class="scroll-indicator">↓</div>
 
 </header>
-
-<!-- WHAT I DO -->
-<section id="what">
-<h2>What I Do</h2>
-<div class="grid">
-
-<div class="card">
-<h3>Automation Framework Architecture</h3>
-<p>Design modular, scalable automation systems using Python & PyTest.</p>
-</div>
-
-<div class="card">
-<h3>Enterprise Desktop Automation</h3>
-<p>Automate complex workflows using Pywinauto with structured validation.</p>
-</div>
-
-<div class="card">
-<h3>Allure Reporting & Debugging</h3>
-<p>Integrate Allure for detailed execution visibility and failure traceability.</p>
-</div>
-
-<div class="card">
-<h3>CI/CD Pipeline Enablement</h3>
-<p>Enable continuous validation through automated CI/CD workflows.</p>
-</div>
-
-</div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-<h2>Projects</h2>
-<div class="grid">
-<div class="card project-card">
-<h3>Enterprise Automation Framework</h3>
-<p>Modular automation architecture for complex enterprise workflows.</p>
-</div>
-
-<div class="card project-card">
-<h3>Allure Reporting Integration</h3>
-<p>Structured reporting with enhanced debugging visibility.</p>
-</div>
-</div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-<h2>Contact</h2>
-<div class="contact-box">
-<input type="text" placeholder="Name">
-<input type="email" placeholder="Email">
-<textarea rows="5" placeholder="Message"></textarea>
-<button>Send Message</button>
-</div>
-</section>
-
-<!-- FOLLOW -->
-<section class="follow">
-<h2>Follow Me</h2>
-<a href="https://linkedin.com/in/shridhar-dt-5869a8196" target="_blank">LinkedIn</a>
-<a href="https://github.com/Shridhardt" target="_blank">GitHub</a>
-<a href="mailto:shridhardt@hotmail.com">Email</a>
-</section>
-
-<footer>
-© 2026 Shridhar DT. All rights reserved.
-</footer>
 
 <script>
 let slider = document.getElementById("roleSlider");
