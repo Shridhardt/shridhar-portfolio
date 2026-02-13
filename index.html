@@ -5,57 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shridhar DT | QA Automation Engineer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root{
-    --primary:#7c3aed;
-    --accent:#ec4899;
-    --dark:#1e1e1e;
-}
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family:'Inter',sans-serif;
 }
 
 body{
-    font-family:'Poppins',sans-serif;
-    background:linear-gradient(135deg,#f5e8ff,#ffe4f6);
-    color:var(--dark);
     overflow-x:hidden;
+    background:#faf5ff;
+    color:#1f1f1f;
 }
 
-/* Floating Gradient Particles */
-.particle{
-    position:fixed;
-    width:300px;
-    height:300px;
-    border-radius:50%;
-    filter:blur(120px);
-    opacity:0.35;
-    animation:float 18s infinite alternate ease-in-out;
-    z-index:-1;
-}
-
-@keyframes float{
-    from{transform:translateY(-60px) translateX(-30px);}
-    to{transform:translateY(60px) translateX(40px);}
-}
-
-nav{
-    display:flex;
-    justify-content:space-between;
-    padding:25px 8%;
-    font-weight:600;
-}
-
-nav a{
-    margin-left:30px;
-    text-decoration:none;
-    color:var(--dark);
-}
+/* =============================
+   Animated Gradient Background
+============================= */
 
 .hero{
     min-height:100vh;
@@ -64,72 +32,111 @@ nav a{
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:0 8%;
+    padding:100px 20px;
+    position:relative;
+    background:linear-gradient(-45deg,#f3e8ff,#fdf2f8,#e0f2fe,#fce7f3);
+    background-size:400% 400%;
+    animation:gradientFlow 12s ease infinite;
 }
 
-.glass{
-    backdrop-filter:blur(20px);
-    background:rgba(255,255,255,0.6);
-    padding:60px 50px;
-    border-radius:30px;
-    box-shadow:0 25px 60px rgba(124,58,237,0.15);
-    transition:0.4s ease;
+@keyframes gradientFlow{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
 
-/* Bitmoji 3D Tilt */
-.bitmoji-wrapper{
-    perspective:1000px;
+/* =============================
+   Glass Navbar
+============================= */
+
+.navbar{
+    position:fixed;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    width:90%;
+    max-width:1100px;
+    display:flex;
+    justify-content:space-between;
+    padding:15px 25px;
+    backdrop-filter:blur(15px);
+    background:rgba(255,255,255,0.35);
+    border-radius:50px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+    z-index:10;
 }
 
-.bitmoji{
+.navbar a{
+    text-decoration:none;
+    color:#111;
+    font-weight:500;
+    margin-left:20px;
+}
+
+/* =============================
+   Bitmoji 3D Tilt
+============================= */
+
+.avatar-wrapper{
     width:200px;
     height:200px;
     border-radius:50%;
-    object-fit:cover;
+    overflow:hidden;
+    margin-bottom:25px;
     transition:transform 0.2s ease;
-    box-shadow:0 20px 40px rgba(124,58,237,0.3);
 }
 
-h1{
-    font-size:48px;
-    margin:20px 0 10px;
+.avatar-wrapper img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transform:scale(1.15);
 }
+
+/* =============================
+   Typing Animation
+============================= */
 
 .typing{
+    font-size:20px;
     font-weight:600;
-    color:var(--primary);
-    height:28px;
-    margin-bottom:20px;
+    color:#7c3aed;
+    margin:15px 0;
+    height:30px;
 }
 
-.about{
-    max-width:650px;
-    margin:0 auto;
-    font-size:15px;
-    line-height:1.6;
-}
+/* =============================
+   Stats
+============================= */
 
 .stats{
     display:flex;
     gap:60px;
-    justify-content:center;
     margin-top:40px;
 }
 
 .stat{
-    text-align:center;
+    font-weight:700;
+    font-size:22px;
 }
 
-.stat h3{
-    font-size:28px;
-    color:var(--primary);
+.stat span{
+    display:block;
+    font-weight:400;
+    font-size:14px;
+    color:#555;
 }
+
+/* =============================
+   Sections
+============================= */
 
 section{
-    padding:100px 8%;
+    padding:120px 20px;
+    text-align:center;
     opacity:0;
     transform:translateY(40px);
-    transition:0.8s ease;
+    transition:all 0.8s ease;
 }
 
 section.visible{
@@ -137,233 +144,259 @@ section.visible{
     transform:translateY(0);
 }
 
-h2{
-    text-align:center;
-    margin-bottom:50px;
-}
+/* =============================
+   Projects Cards
+============================= */
 
-/* Project Cards */
 .projects{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:30px;
+    margin-top:50px;
 }
 
 .card{
-    background:rgba(255,255,255,0.7);
-    backdrop-filter:blur(15px);
     padding:30px;
     border-radius:20px;
-    box-shadow:0 15px 40px rgba(124,58,237,0.1);
-    transition:0.4s ease;
+    background:rgba(255,255,255,0.4);
+    backdrop-filter:blur(15px);
+    box-shadow:0 15px 40px rgba(0,0,0,0.05);
+    transition:transform 0.4s ease;
 }
 
 .card:hover{
     transform:translateY(-10px);
-    box-shadow:0 20px 50px rgba(124,58,237,0.2);
 }
 
-.contact-icons{
-    display:flex;
-    justify-content:center;
-    gap:40px;
-    margin-top:30px;
+/* =============================
+   AI Glow Cursor
+============================= */
+
+.cursor{
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:radial-gradient(circle,#c084fc,#ec4899);
+    position:fixed;
+    pointer-events:none;
+    mix-blend-mode:multiply;
+    z-index:1000;
+    transition:transform 0.1s ease;
 }
 
-.contact-icons a svg{
-    width:32px;
-    height:32px;
-    fill:var(--primary);
-    transition:0.3s;
+/* =============================
+   Noise Overlay
+============================= */
+
+body::after{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    background-image:url("https://grainy-gradients.vercel.app/noise.svg");
+    opacity:0.05;
+    z-index:0;
 }
 
-.contact-icons a:hover svg{
-    transform:scale(1.2);
+/* =============================
+   Light Rain Canvas
+============================= */
+
+#rain{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-1;
 }
 </style>
 </head>
-
 <body>
 
-<!-- Background Particles -->
-<div class="particle" style="background:#c084fc;top:5%;left:10%;"></div>
-<div class="particle" style="background:#f472b6;bottom:10%;right:5%;animation-duration:22s;"></div>
+<canvas id="rain"></canvas>
+<div class="cursor" id="cursor"></div>
 
-<nav>
-<div>Shridhar DT</div>
-<div>
-<a href="#home">Home</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-</div>
+<nav class="navbar">
+    <div><strong>Shridhar DT</strong></div>
+    <div>
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
 </nav>
 
-<section id="home" class="hero">
-<div class="glass">
+<section class="hero" id="home">
+    <div class="avatar-wrapper" id="tilt">
+        <img src="bitmoji.png" alt="Shridhar">
+    </div>
 
-<div class="bitmoji-wrapper">
-<img src="bitmoji.png" class="bitmoji" id="bitmoji">
-</div>
+    <h1 style="font-size:48px;">Shridhar DT</h1>
 
-<h1>Shridhar DT</h1>
-<div class="typing" id="typing"></div>
+    <div class="typing" id="typing"></div>
 
-<div class="about">
-QA Automation Engineer specializing in scalable test framework architecture,
-regression suite optimization, CI/CD integration, and structured test reporting.
-Focused on reliability engineering, traceability, and production-ready automation delivery.
-</div>
+    <p style="max-width:700px;margin:auto;color:#444;">
+        QA Automation Engineer specializing in scalable enterprise test frameworks,
+        structured reporting, CI/CD integration, and secure automation architecture.
+    </p>
 
-<div class="stats">
-<div class="stat">
-<h3 class="counter" data-target="4">0</h3>
-<p>Years Experience</p>
-</div>
-
-<div class="stat">
-<h3 class="counter" data-target="100">0</h3>
-<p>Automation Scripts</p>
-</div>
-
-<div class="stat">
-<h3>Enterprise</h3>
-<p>Production Ready</p>
-</div>
-</div>
-
-</div>
+    <div class="stats">
+        <div class="stat" data-target="4">0+<span>Years Experience</span></div>
+        <div class="stat" data-target="100">0+<span>Automation Scripts</span></div>
+        <div class="stat">Enterprise<span>Production Ready</span></div>
+    </div>
 </section>
 
 <section id="projects">
-<h2>Enterprise Automation Implementation</h2>
+    <h2>Enterprise Automation Framework</h2>
 
-<div class="projects">
+    <div class="projects">
+        <div class="card">
+            <h3>Modular Architecture</h3>
+            <p>Designed a scalable automation framework using Python and PyTest,
+            implementing page-object patterns, structured logging, and modular test design
+            for improved maintainability.</p>
+        </div>
 
-<div class="card">
-<h3>Framework Architecture Design</h3>
-<p>
-Designed modular Python + PyTest automation architecture supporting reusable components,
-dynamic workflow validations, and scalable regression expansion across enterprise modules.
-Implemented structured logging and layered test abstraction for maintainability.
-</p>
-</div>
+        <div class="card">
+            <h3>Allure Reporting Integration</h3>
+            <p>Integrated Allure for detailed test traceability, failure analysis,
+            execution dashboards, and structured step-level debugging visibility.</p>
+        </div>
 
-<div class="card">
-<h3>Allure Reporting & Traceability</h3>
-<p>
-Integrated Allure with step-level execution tracking, attachment logs,
-and structured reporting for advanced failure analysis.
-Improved debugging efficiency and enabled traceable test visibility across builds.
-</p>
-</div>
+        <div class="card">
+            <h3>CI/CD Automation</h3>
+            <p>Configured automated pipeline execution with environment-based configuration,
+            secure credential management, and production-ready validation workflows.</p>
+        </div>
 
-<div class="card">
-<h3>CI/CD Automation Integration</h3>
-<p>
-Integrated automated regression pipelines into CI/CD workflows,
-ensuring build-level validation and release stability.
-Implemented environment-based configuration and secure credential handling.
-</p>
-</div>
-
-</div>
+        <div class="card">
+            <h3>Secure Repository Refactoring</h3>
+            <p>Eliminated hardcoded credentials, implemented environment variables,
+            and ensured cybersecurity compliance in version-controlled automation systems.</p>
+        </div>
+    </div>
 </section>
 
 <section id="contact">
-<h2>Connect With Me</h2>
-
-<div class="contact-icons">
-
-<a href="mailto:shridhardt@hotmail.com">
-<svg viewBox="0 0 24 24"><path d="M12 13L2 6V18H22V6L12 13Z"/></svg>
-</a>
-
-<a href="https://github.com/Shridhardt" target="_blank">
-<svg viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5 3.2 9.2 7.7 10.7.6.1.8-.2.8-.6v-2c-3.1.7-3.7-1.3-3.7-1.3-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 .1.8-.7.8-.7-.8-.2-1.7-.5-1.7-2.4 0-.5.2-1 .5-1.3-.1-.2-.2-.8.1-1.6 0 0 .4-.1 1.4.5a4.7 4.7 0 012.5 0c1-.6 1.4-.5 1.4-.5.3.8.2 1.4.1 1.6.3.3.5.8.5 1.3 0 1.9-1 2.2-1.8 2.4.2.2.4.6.4 1.2v1.8c0 .4.2.7.8.6A10.8 10.8 0 0023.5 12C23.5 5.7 18.3.5 12 .5z"/></svg>
-</a>
-
-<a href="https://linkedin.com/in/shridhar-dt-5869a8196" target="_blank">
-<svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.49 6S0 4.88 0 3.5 1.12 1 2.49 1 4.98 2.12 4.98 3.5zM.5 8h4v15h-4V8zm7.5 0h3.8v2.1h.1c.5-1 1.8-2.1 3.7-2.1 4 0 4.7 2.6 4.7 6V23h-4v-7c0-1.7 0-3.9-2.4-3.9-2.4 0-2.8 1.8-2.8 3.8V23h-4V8z"/></svg>
-</a>
-
-</div>
+    <h2>Contact</h2>
+    <p>Email: shridhardt@hotmail.com</p>
+    <p>LinkedIn | GitHub</p>
 </section>
 
 <script>
-/* Typing Animation */
-const roles=[
+// ================= Typing Effect =================
+
+const roles = [
 "QA Automation Engineer",
 "Enterprise Application Automation",
+"Pywinauto Desktop UI Automation",
 "Allure Reporting & Test Traceability",
 "CI/CD Pipeline Integration"
 ];
 
-let i=0,j=0,current='',deleting=false;
-const typing=document.getElementById("typing");
+let i=0,j=0,current="",isDeleting=false;
+const typingEl=document.getElementById("typing");
 
 function type(){
-if(!deleting && j<=roles[i].length){
-current=roles[i].substring(0,j++);
-}else if(deleting && j>=0){
-current=roles[i].substring(0,j--);
-}
-typing.textContent=current;
-
-if(j==roles[i].length) deleting=true;
-if(j==0 && deleting){
-deleting=false;
-i=(i+1)%roles.length;
-}
-setTimeout(type,100);
+    current=roles[i];
+    if(!isDeleting){
+        typingEl.textContent=current.substring(0,j++);
+        if(j>current.length){isDeleting=true;setTimeout(type,1000);return;}
+    }else{
+        typingEl.textContent=current.substring(0,j--);
+        if(j<0){isDeleting=false;i=(i+1)%roles.length;}
+    }
+    setTimeout(type,isDeleting?50:100);
 }
 type();
 
-/* Counter Animation */
-const counters=document.querySelectorAll(".counter");
-const speed=200;
+// ================= Scroll Reveal =================
 
-counters.forEach(counter=>{
-const update=()=>{
-const target=+counter.getAttribute("data-target");
-const count=+counter.innerText;
-const inc=target/speed;
-
-if(count<target){
-counter.innerText=Math.ceil(count+inc);
-setTimeout(update,10);
-}else{
-counter.innerText=target+"+";
-}
-};
-update();
-});
-
-/* Scroll Reveal */
 const sections=document.querySelectorAll("section");
 window.addEventListener("scroll",()=>{
-sections.forEach(sec=>{
-if(sec.getBoundingClientRect().top<window.innerHeight-100){
-sec.classList.add("visible");
+    sections.forEach(sec=>{
+        const top=sec.getBoundingClientRect().top;
+        if(top<window.innerHeight-100){sec.classList.add("visible");}
+    });
+});
+
+// ================= Counter Animation =================
+
+document.querySelectorAll(".stat").forEach(stat=>{
+    const target=+stat.dataset.target;
+    if(!target)return;
+    let count=0;
+    const update=()=>{
+        if(count<target){
+            count++;
+            stat.childNodes[0].nodeValue=count+"+";
+            requestAnimationFrame(update);
+        }
+    }
+    update();
+});
+
+// ================= 3D Tilt =================
+
+const tilt=document.getElementById("tilt");
+tilt.addEventListener("mousemove",(e)=>{
+    const rect=tilt.getBoundingClientRect();
+    const x=e.clientX-rect.left;
+    const y=e.clientY-rect.top;
+    const centerX=rect.width/2;
+    const centerY=rect.height/2;
+    const rotateX=((y-centerY)/20);
+    const rotateY=((centerX-x)/20);
+    tilt.style.transform=`rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+});
+tilt.addEventListener("mouseleave",()=>tilt.style.transform="rotateX(0) rotateY(0)");
+
+// ================= Glow Cursor =================
+
+const cursor=document.getElementById("cursor");
+document.addEventListener("mousemove",(e)=>{
+    cursor.style.left=e.clientX-10+"px";
+    cursor.style.top=e.clientY-10+"px";
+});
+
+// ================= Light Rain =================
+
+const canvas=document.getElementById("rain");
+const ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+const drops=[];
+for(let i=0;i<120;i++){
+    drops.push({
+        x:Math.random()*canvas.width,
+        y:Math.random()*canvas.height,
+        speed:Math.random()*1+0.5
+    });
 }
-});
-});
 
-/* Bitmoji 3D Tilt */
-const bitmoji=document.getElementById("bitmoji");
-bitmoji.addEventListener("mousemove",e=>{
-const rect=bitmoji.getBoundingClientRect();
-const x=e.clientX-rect.left;
-const y=e.clientY-rect.top;
-const centerX=rect.width/2;
-const centerY=rect.height/2;
-const rotateX=(y-centerY)/15;
-const rotateY=(centerX-x)/15;
-bitmoji.style.transform=`rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-});
-bitmoji.addEventListener("mouseleave",()=>{
-bitmoji.style.transform="rotateX(0) rotateY(0)";
-});
+function drawRain(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.strokeStyle="rgba(168,85,247,0.2)";
+    ctx.lineWidth=1;
+
+    drops.forEach(d=>{
+        ctx.beginPath();
+        ctx.moveTo(d.x,d.y);
+        ctx.lineTo(d.x,d.y+10);
+        ctx.stroke();
+        d.y+=d.speed;
+        if(d.y>canvas.height){d.y=0;}
+    });
+
+    requestAnimationFrame(drawRain);
+}
+drawRain();
+
 </script>
-
 </body>
 </html>
