@@ -8,455 +8,318 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
+:root{
+    --bg-light: #f4f7fb;
+    --bg-dark: #0f172a;
+    --text-light: #111;
+    --text-dark: #fff;
+    --primary: #6366f1;
 }
 
 body{
-background:linear-gradient(135deg,#e0f2fe,#fce7f3);
-color:#333;
-overflow-x:hidden;
+    margin:0;
+    font-family:'Poppins', sans-serif;
+    background:var(--bg-light);
+    color:var(--text-light);
+    transition:0.4s;
+    overflow-x:hidden;
+}
+
+body.dark{
+    background:var(--bg-dark);
+    color:var(--text-dark);
 }
 
 canvas{
-position:fixed;
-top:0;
-left:0;
-z-index:-1;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-1;
 }
 
-/* NAVIGATION */
 nav{
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 8%;
-background:rgba(255,255,255,0.6);
-backdrop-filter:blur(10px);
-z-index:1000;
-}
-
-nav ul{
-display:flex;
-gap:30px;
-list-style:none;
+    display:flex;
+    justify-content:space-between;
+    padding:20px 8%;
+    font-weight:600;
 }
 
 nav a{
-text-decoration:none;
-color:#444;
-font-weight:500;
+    margin-left:25px;
+    text-decoration:none;
+    color:inherit;
 }
 
-/* SECTIONS */
+.toggle{
+    cursor:pointer;
+    margin-left:20px;
+}
+
 section{
-padding:140px 8% 100px 8%;
-min-height:100vh;
+    padding:100px 8%;
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.8s ease;
 }
 
-/* HERO */
+section.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
 .hero{
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-text-align:center;
+    text-align:center;
+    padding-top:120px;
 }
 
-.bitmoji{
-width:240px;
-height:240px;
-border-radius:50%;
-overflow:hidden;
-margin-bottom:30px;
-box-shadow:0 20px 50px rgba(0,0,0,0.1);
-transition:0.4s;
-}
-
-.bitmoji img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-.bitmoji:hover{
-transform:scale(1.05);
+.hero img{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    margin-bottom:30px;
 }
 
 .hero h1{
-font-size:52px;
-margin-bottom:15px;
-}
-
-.typing{
-font-size:22px;
-color:#7c3aed;
-height:28px;
-margin-bottom:20px;
+    font-size:48px;
+    margin:10px 0;
 }
 
 .hero p{
-max-width:750px;
-line-height:1.8;
-color:#555;
+    max-width:700px;
+    margin:auto;
+    line-height:1.7;
 }
 
 .stats{
-margin-top:50px;
-display:flex;
-gap:80px;
+    display:flex;
+    justify-content:center;
+    gap:60px;
+    margin-top:40px;
+    font-weight:600;
 }
 
-.stat h2{
-color:#7c3aed;
-font-size:28px;
-}
-
-.stat p{
-color:#666;
-}
-
-/* WHAT I DO */
-.section-title{
-text-align:center;
-font-size:38px;
-margin-bottom:60px;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:40px;
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    margin-top:40px;
 }
 
 .card{
-padding:30px;
-border-radius:15px;
-transition:0.3s;
+    padding:30px;
+    border-radius:16px;
+    background:rgba(255,255,255,0.6);
+    backdrop-filter:blur(10px);
+    transition:0.3s;
+}
+
+body.dark .card{
+    background:rgba(255,255,255,0.05);
 }
 
 .card:hover{
-transform:translateY(-8px);
+    transform:translateY(-8px);
 }
 
-.card h3{
-color:#7c3aed;
-margin-bottom:15px;
+h2{
+    text-align:center;
+    font-size:32px;
+    margin-bottom:20px;
 }
 
-.card p{
-color:#555;
-line-height:1.7;
-}
-
-/* PROJECTS */
-.project{
-margin-bottom:50px;
-}
-
-.project h3{
-color:#7c3aed;
-margin-bottom:10px;
-}
-
-.project p{
-color:#555;
-margin-bottom:10px;
-}
-
-.project button{
-background:#7c3aed;
-color:white;
-border:none;
-padding:8px 18px;
-border-radius:8px;
-cursor:pointer;
-}
-
-.project-details{
-display:none;
-margin-top:10px;
-line-height:1.7;
-color:#555;
-}
-
-/* CONTACT */
-.contact{
-text-align:center;
-}
-
-.contact a{
-display:inline-block;
-margin:10px 20px;
-padding:10px 20px;
-background:#7c3aed;
-color:white;
-border-radius:8px;
-text-decoration:none;
-}
-
-/* FOOTER */
 footer{
-text-align:center;
-padding:30px;
-background:rgba(255,255,255,0.6);
-}
-
-@media(max-width:768px){
-.stats{
-flex-direction:column;
-gap:30px;
-}
+    text-align:center;
+    padding:40px;
+    font-size:14px;
 }
 </style>
 </head>
 
 <body>
 
-<canvas id="network"></canvas>
+<canvas id="bg"></canvas>
 
 <nav>
-<h2>Shridhar DT</h2>
-<ul>
-<li><a href="#">Home</a></li>
-<li><a href="#what">What I Do</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
+    <div>Shridhar DT</div>
+    <div>
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <span class="toggle" onclick="toggleMode()">🌙</span>
+    </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-<div class="bitmoji">
-<img src="bitmoji.png" alt="Shridhar">
-</div>
+<section id="home" class="hero">
+    <img src="bitmoji.png" alt="Shridhar">
+    <h1>Shridhar DT</h1>
+    <h3>QA Automation Engineer | Enterprise Application Automation</h3>
+    <p>
+        I design and implement scalable automation frameworks for complex enterprise systems.
+        My expertise includes modular architecture design, structured test traceability,
+        CI/CD integration, Allure reporting implementation, and secure configuration management.
+        I focus on reliability, maintainability, and production-ready automation delivery.
+    </p>
 
-<h1>Shridhar DT</h1>
-<div class="typing" id="typing"></div>
-
-<p>
-I design and implement scalable automation frameworks for complex enterprise applications,
-focusing on reliability, maintainability, structured reporting, and secure development practices.
-</p>
-
-<div class="stats">
-<div class="stat">
-<h2>4+</h2>
-<p>Years Experience</p>
-</div>
-<div class="stat">
-<h2>100+</h2>
-<p>Automation Scripts</p>
-</div>
-<div class="stat">
-<h2>Enterprise</h2>
-<p>Production Ready</p>
-</div>
-</div>
+    <div class="stats">
+        <div>4+ Years Experience</div>
+        <div>100+ Automation Scripts</div>
+        <div>Enterprise Production Ready</div>
+    </div>
 </section>
 
-<!-- WHAT I DO -->
-<section id="what">
-<h2 class="section-title">What I Do</h2>
-
-<div class="cards">
-<div class="card">
-<h3>Automation Framework Design</h3>
-<p>Modular Python & PyTest frameworks built for enterprise-grade scalability and maintainability.</p>
-</div>
-
-<div class="card">
-<h3>Desktop UI Automation</h3>
-<p>Advanced automation using Pywinauto for Windows enterprise workflows and system validation.</p>
-</div>
-
-<div class="card">
-<h3>Allure Reporting & Traceability</h3>
-<p>Step-level reporting, structured logs, screenshot capture, and execution analytics.</p>
-</div>
-
-<div class="card">
-<h3>CI/CD Integration</h3>
-<p>Pipeline automation, environment configuration, and regression execution in continuous delivery systems.</p>
-</div>
-</div>
-</section>
-
-<!-- PROJECTS -->
 <section id="projects">
-<h2 class="section-title">Projects</h2>
+    <h2>Enterprise Projects</h2>
+    <div class="card-grid">
 
-<div class="project">
-<h3>Enterprise Desktop Automation Framework</h3>
-<p>Designed scalable architecture for complex modules.</p>
-<button onclick="toggle(this)">View Details</button>
-<div class="project-details">
-Reusable test components, structured logging, Allure integration, regression optimization.
-</div>
-</div>
+        <div class="card">
+            <h3>Enterprise Desktop Automation Framework</h3>
+            <p>
+                Designed and implemented a modular Python automation framework using PyTest
+                and desktop UI automation techniques. Built reusable components to handle
+                dynamic enterprise workflows and complex UI element interactions.
+            </p>
+            <p>
+                Integrated structured logging, robust error handling, environment-based
+                configuration management, and Allure reporting for detailed traceability.
+                Improved regression efficiency and minimized manual validation effort.
+            </p>
+        </div>
 
-<div class="project">
-<h3>Allure Reporting Enhancement</h3>
-<p>Improved execution transparency and debugging.</p>
-<button onclick="toggle(this)">View Details</button>
-<div class="project-details">
-Failure traceability, execution dashboards, analytics and structured test reporting.
-</div>
-</div>
+        <div class="card">
+            <h3>Allure Reporting & Traceability System</h3>
+            <p>
+                Implemented comprehensive Allure reporting integration to provide
+                step-level execution visibility and enhanced debugging capabilities.
+                Enabled clear traceability between test cases and enterprise modules.
+            </p>
+            <p>
+                Designed structured execution pipelines generating actionable reports,
+                improving root cause analysis speed and cross-team collaboration.
+            </p>
+        </div>
 
-<div class="project">
-<h3>Secure Credential Refactoring</h3>
-<p>Improved repository security practices.</p>
-<button onclick="toggle(this)">View Details</button>
-<div class="project-details">
-Environment-based configuration and secure secret management.
-</div>
-</div>
+        <div class="card">
+            <h3>CI/CD Pipeline Integration</h3>
+            <p>
+                Integrated automation suites into CI/CD workflows enabling continuous
+                regression validation and faster release cycles. Automated execution
+                triggers on repository changes with environment isolation.
+            </p>
+            <p>
+                Ensured secure credential handling through environment variables
+                and improved deployment stability through structured pipeline validation.
+            </p>
+        </div>
 
+        <div class="card">
+            <h3>Secure Repository Refactoring</h3>
+            <p>
+                Identified security risks due to hardcoded credentials and restructured
+                configuration management using environment-based parameters.
+            </p>
+            <p>
+                Enhanced repository compliance, improved maintainability, and aligned
+                with cybersecurity best practices for enterprise environments.
+            </p>
+        </div>
+
+    </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="contact">
-<h2 class="section-title">Contact</h2>
-<a href="mailto:shridhardt@hotmail.com">Email</a>
-<a href="https://github.com/Shridhardt" target="_blank">GitHub</a>
-<a href="https://linkedin.com/in/shridhar-dt-5869a8196" target="_blank">LinkedIn</a>
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h3>Email</h3>
+            <p><a href="mailto:shridhardt@hotmail.com">shridhardt@hotmail.com</a></p>
+        </div>
+        <div class="card">
+            <h3>LinkedIn</h3>
+            <p><a href="https://linkedin.com/in/shridhar-dt-5869a8196" target="_blank">
+            linkedin.com/in/shridhar-dt-5869a8196</a></p>
+        </div>
+        <div class="card">
+            <h3>GitHub</h3>
+            <p><a href="https://github.com/Shridhardt" target="_blank">
+            github.com/Shridhardt</a></p>
+        </div>
+    </div>
 </section>
 
 <footer>
-© 2026 Shridhar DT | QA Automation Engineer
+© 2026 Shridhar DT. All rights reserved.
 </footer>
 
 <script>
-
-/* Typing Animation */
-const roles=[
-"QA Automation Engineer",
-"Enterprise Application Automation",
-"Pywinauto Desktop UI Automation",
-"Allure Reporting & Test Traceability",
-"CI/CD Pipeline Integration"
-];
-
-let i=0,j=0,isDeleting=false;
-const typing=document.getElementById("typing");
-
-function type(){
-const current=roles[i];
-typing.textContent=isDeleting?
-current.substring(0,j--):
-current.substring(0,j++);
-
-if(!isDeleting && j===current.length)
-setTimeout(()=>isDeleting=true,1200);
-
-if(isDeleting && j===0){
-isDeleting=false;
-i=(i+1)%roles.length;
-}
-setTimeout(type,isDeleting?40:70);
-}
-type();
-
-/* Toggle Project */
-function toggle(btn){
-const details=btn.nextElementSibling;
-details.style.display=details.style.display==="block"?"none":"block";
+/* DARK MODE */
+function toggleMode(){
+    document.body.classList.toggle('dark');
 }
 
-/* Interactive Network Background */
-const canvas=document.getElementById("network");
-const ctx=canvas.getContext("2d");
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
-
-let particles=[];
-const mouse={x:null,y:null};
-
-window.addEventListener("mousemove",(e)=>{
-mouse.x=e.x;
-mouse.y=e.y;
+/* SCROLL REVEAL */
+const sections = document.querySelectorAll("section");
+window.addEventListener("scroll", ()=>{
+    sections.forEach(sec=>{
+        const top = sec.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+            sec.classList.add("visible");
+        }
+    });
 });
 
-class Particle{
-constructor(){
-this.x=Math.random()*canvas.width;
-this.y=Math.random()*canvas.height;
-this.size=2;
-this.speedX=(Math.random()-0.5)*0.7;
-this.speedY=(Math.random()-0.5)*0.7;
+/* 3D MESH BACKGROUND */
+const canvas = document.getElementById("bg");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+for(let i=0;i<80;i++){
+    particles.push({
+        x:Math.random()*canvas.width,
+        y:Math.random()*canvas.height,
+        vx:(Math.random()-0.5)*0.5,
+        vy:(Math.random()-0.5)*0.5
+    });
 }
 
-update(){
-this.x+=this.speedX;
-this.y+=this.speedY;
+function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle="rgba(99,102,241,0.3)";
+    particles.forEach(p=>{
+        p.x+=p.vx;
+        p.y+=p.vy;
 
-if(this.x<0||this.x>canvas.width)this.speedX*=-1;
-if(this.y<0||this.y>canvas.height)this.speedY*=-1;
+        if(p.x<0||p.x>canvas.width) p.vx*=-1;
+        if(p.y<0||p.y>canvas.height) p.vy*=-1;
 
-let dx=mouse.x-this.x;
-let dy=mouse.y-this.y;
-let distance=Math.sqrt(dx*dx+dy*dy);
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,2,0,Math.PI*2);
+        ctx.fill();
+    });
 
-if(distance<120){
-this.x-=dx/20;
-this.y-=dy/20;
-}
-}
+    for(let i=0;i<particles.length;i++){
+        for(let j=i;j<particles.length;j++){
+            let dx=particles[i].x-particles[j].x;
+            let dy=particles[i].y-particles[j].y;
+            let dist=Math.sqrt(dx*dx+dy*dy);
+            if(dist<120){
+                ctx.strokeStyle="rgba(99,102,241,0.1)";
+                ctx.beginPath();
+                ctx.moveTo(particles[i].x,particles[i].y);
+                ctx.lineTo(particles[j].x,particles[j].y);
+                ctx.stroke();
+            }
+        }
+    }
 
-draw(){
-ctx.fillStyle="rgba(124,58,237,0.6)";
-ctx.beginPath();
-ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
-ctx.fill();
+    requestAnimationFrame(draw);
 }
-}
-
-function connect(){
-for(let a=0;a<particles.length;a++){
-for(let b=a;b<particles.length;b++){
-let dx=particles[a].x-particles[b].x;
-let dy=particles[a].y-particles[b].y;
-let distance=Math.sqrt(dx*dx+dy*dy);
-if(distance<120){
-ctx.strokeStyle="rgba(124,58,237,0.15)";
-ctx.lineWidth=1;
-ctx.beginPath();
-ctx.moveTo(particles[a].x,particles[a].y);
-ctx.lineTo(particles[b].x,particles[b].y);
-ctx.stroke();
-}
-}
-}
-}
-
-function init(){
-particles=[];
-for(let i=0;i<90;i++){
-particles.push(new Particle());
-}
-}
-
-function animate(){
-ctx.clearRect(0,0,canvas.width,canvas.height);
-particles.forEach(p=>{
-p.update();
-p.draw();
-});
-connect();
-requestAnimationFrame(animate);
-}
-
-init();
-animate();
-
+draw();
 </script>
 
 </body>
