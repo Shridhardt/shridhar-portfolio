@@ -32,24 +32,40 @@ nav a{
 }
 
 header{
-    height:80vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+    padding:150px 80px 100px;
     text-align:center;
 }
 
-h1{
-    font-size:52px;
+header h1{
+    font-size:48px;
     color:#38bdf8;
 }
 
 .subtitle{
-    margin-top:20px;
-    max-width:650px;
+    margin-top:15px;
+    font-size:18px;
     color:#cbd5e1;
 }
+
+.hero-text{
+    max-width:800px;
+    margin:30px auto;
+    line-height:1.7;
+}
+
+.btn{
+    display:inline-block;
+    margin:10px;
+    padding:12px 25px;
+    border-radius:30px;
+    background:#38bdf8;
+    color:#0f172a;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{transform:scale(1.05);}
 
 section{
     padding:100px 120px;
@@ -60,22 +76,26 @@ h2{
     color:#38bdf8;
 }
 
+.card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    padding:30px;
+    border-radius:15px;
+    margin-bottom:25px;
+}
+
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
     gap:30px;
 }
 
-.card{
-    background:rgba(255,255,255,0.05);
-    backdrop-filter:blur(12px);
-    padding:30px;
-    border-radius:15px;
+.project-card{
     cursor:pointer;
     transition:0.3s;
 }
 
-.card:hover{
+.project-card:hover{
     background:rgba(255,255,255,0.1);
     transform:translateY(-5px);
 }
@@ -97,15 +117,16 @@ h2{
     background:#1e293b;
     padding:40px;
     border-radius:15px;
-    max-width:600px;
+    max-width:700px;
     width:90%;
+    line-height:1.6;
 }
 
 .close{
     text-align:right;
     cursor:pointer;
-    font-weight:bold;
     color:#38bdf8;
+    font-weight:bold;
 }
 
 footer{
@@ -121,115 +142,140 @@ footer{
 <nav>
 <div><strong>Shridhar DT</strong></div>
 <div>
-<a href="#experience">Experience</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
 <a href="#projects">Projects</a>
 <a href="#contact">Contact</a>
 </div>
 </nav>
 
 <header>
-<h1>QA Automation Engineer</h1>
-<p class="subtitle">
-Designing scalable Python automation frameworks with structured reporting and secure architecture.
-</p>
-</header>
+<h1>Shridhar DT</h1>
+<p class="subtitle">QA Automation Engineer | Enterprise Application Automation | Python</p>
 
-<section id="experience">
-<h2>Experience</h2>
-<div class="cards">
-<div class="card" onclick="openModal('exp1')">
-<h3>QA Automation Engineer</h3>
-<p>Enterprise Automation Architecture</p>
+<div class="hero-text">
+I design and implement scalable automation frameworks for complex enterprise applications,
+focusing on reliability, maintainability, structured reporting, and secure development practices.
 </div>
 
-<div class="card" onclick="openModal('exp2')">
-<h3>Reporting Enhancement</h3>
-<p>Allure Integration & Traceability</p>
+<a href="#projects" class="btn">View Projects</a>
+<a href="#contact" class="btn">Contact Me</a>
+</header>
+
+<section id="about">
+<h2>About Me</h2>
+<div class="card">
+I am a QA Automation Engineer with hands-on experience in automating complex enterprise desktop applications.
+My work focuses on building modular automation frameworks, validating business workflows,
+and improving regression efficiency through structured reporting and secure coding standards.
+<br><br>
+<strong>I specialize in:</strong>
+<ul style="margin-top:15px; line-height:1.8;">
+<li>Automation framework development</li>
+<li>Test architecture design</li>
+<li>Allure reporting integration</li>
+<li>Debugging complex automation failures</li>
+<li>Secure coding & configuration management</li>
+</ul>
+</div>
+</section>
+
+<section id="skills">
+<h2>Technical Skills</h2>
+
+<div class="cards">
+<div class="card">
+<h3>Programming</h3>
+Python, SQL, Basic Shell Scripting
+</div>
+
+<div class="card">
+<h3>Automation & Testing</h3>
+PyTest, Desktop UI Automation, Test Case Design, Framework Architecture
+</div>
+
+<div class="card">
+<h3>Reporting & Analysis</h3>
+Allure Reports, Log Analysis, Failure Debugging & Traceability
+</div>
+
+<div class="card">
+<h3>Tools & Security</h3>
+Git, CI/CD Basics, Environment Configuration, Secure Credential Management
 </div>
 </div>
 </section>
 
 <section id="projects">
 <h2>Projects</h2>
+
 <div class="cards">
-<div class="card" onclick="openModal('proj1')">
-<h3>Automation Framework Design</h3>
-<p>Modular & Scalable Architecture</p>
+
+<div class="card project-card" onclick="openModal('proj1')">
+<h3>Enterprise Desktop Automation Framework</h3>
+<p>Click to view detailed approach & results</p>
 </div>
 
-<div class="card" onclick="openModal('proj2')">
-<h3>Secure Configuration Initiative</h3>
-<p>Environment-based Credential Handling</p>
+<div class="card project-card" onclick="openModal('proj2')">
+<h3>Allure Reporting Integration</h3>
+<p>Click to view detailed implementation</p>
 </div>
+
+<div class="card project-card" onclick="openModal('proj3')">
+<h3>Secure Credential Refactoring</h3>
+<p>Click to view security improvements</p>
+</div>
+
 </div>
 </section>
 
 <section id="contact">
 <h2>Contact</h2>
-<a href="mailto:shridhardt@hotmail.com" style="color:#38bdf8;">Email</a> |
-<a href="https://linkedin.com/in/shridhar-dt-5869a8196" target="_blank" style="color:#38bdf8;">LinkedIn</a> |
-<a href="https://github.com/Shridhardt" target="_blank" style="color:#38bdf8;">GitHub</a>
+<a href="mailto:shridhardt@hotmail.com" class="btn">Email</a>
+<a href="https://linkedin.com/in/shridhar-dt-5869a8196" target="_blank" class="btn">LinkedIn</a>
+<a href="https://github.com/Shridhardt" target="_blank" class="btn">GitHub</a>
 </section>
 
 <footer>
 © 2026 Shridhar DT
 </footer>
 
-<!-- Modals -->
-
-<div id="exp1" class="modal">
-<div class="modal-content">
-<div class="close" onclick="closeModal('exp1')">Close</div>
-<h3>Enterprise Automation Architecture</h3>
-<p>
-Approach:
-• Designed modular framework using PyTest
-• Implemented Page Object Model structure
-• Improved test maintainability & reusability
-• Reduced regression instability
-</p>
-</div>
-</div>
-
-<div id="exp2" class="modal">
-<div class="modal-content">
-<div class="close" onclick="closeModal('exp2')">Close</div>
-<h3>Allure Reporting Integration</h3>
-<p>
-Approach:
-• Integrated Allure with PyTest
-• Enabled detailed execution traceability
-• Enhanced debugging visibility
-• Improved failure analysis speed
-</p>
-</div>
-</div>
+<!-- Project Modals -->
 
 <div id="proj1" class="modal">
 <div class="modal-content">
 <div class="close" onclick="closeModal('proj1')">Close</div>
-<h3>Automation Framework Design</h3>
-<p>
-Approach:
-• Created reusable automation modules
-• Structured logging & configuration
-• Designed scalable test architecture
-• Focused on clean code practices
-</p>
+<h3>Enterprise Desktop Automation Framework</h3>
+<strong>Problem:</strong><br>
+Manual validation was repetitive and error-prone.
+<br><br>
+<strong>Solution:</strong>
+<ul>
+<li>Designed modular automation framework using Python & PyTest</li>
+<li>Automated dynamic workflows and UI validations</li>
+<li>Integrated structured logging & Allure reporting</li>
+</ul>
+<br>
+<strong>Result:</strong><br>
+Improved regression stability and enhanced test visibility.
 </div>
 </div>
 
 <div id="proj2" class="modal">
 <div class="modal-content">
 <div class="close" onclick="closeModal('proj2')">Close</div>
-<h3>Secure Configuration Initiative</h3>
-<p>
-Approach:
-• Removed hardcoded credentials
-• Implemented environment variables
-• Strengthened repository compliance
-• Improved secure coding practices
-</p>
+<h3>Allure Reporting Integration</h3>
+Integrated Allure with PyTest to generate detailed execution reports,
+improving failure traceability and debugging efficiency.
+</div>
+</div>
+
+<div id="proj3" class="modal">
+<div class="modal-content">
+<div class="close" onclick="closeModal('proj3')">Close</div>
+<h3>Secure Credential Refactoring</h3>
+Replaced hardcoded credentials with environment variables,
+updated Git workflow, and improved repository security compliance.
 </div>
 </div>
 
