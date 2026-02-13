@@ -6,8 +6,8 @@
 
 <title>Shridhar DT | QA Automation Engineer</title>
 
-<!-- Favicon -->
-<link rel="icon" type="image/png" sizes="32x32" href="bitmoji.png">
+<!-- Larger Favicon -->
+<link rel="icon" type="image/png" sizes="64x64" href="bitmoji.png">
 <link rel="shortcut icon" href="bitmoji.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -18,7 +18,6 @@
     padding:0;
     box-sizing:border-box;
     font-family:'Inter',sans-serif;
-    scroll-behavior:smooth;
 }
 
 body{
@@ -27,7 +26,8 @@ body{
     color:#111;
 }
 
-/* RAIN EFFECT */
+/* ================= RAIN ================= */
+
 #rain{
     position:fixed;
     top:0;
@@ -38,7 +38,8 @@ body{
     pointer-events:none;
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
+
 .navbar{
     position:fixed;
     top:20px;
@@ -50,7 +51,7 @@ body{
     justify-content:space-between;
     padding:14px 28px;
     backdrop-filter:blur(15px);
-    background:rgba(255,255,255,0.65);
+    background:rgba(255,255,255,0.6);
     border-radius:50px;
     box-shadow:0 10px 40px rgba(124,58,237,0.1);
     z-index:100;
@@ -60,7 +61,7 @@ body{
     text-decoration:none;
     color:#111;
     font-weight:500;
-    margin-left:20px;
+    margin-left:25px;
     padding:6px 14px;
     border-radius:20px;
     transition:0.3s;
@@ -69,10 +70,11 @@ body{
 .navbar a.active,
 .navbar a:hover{
     background:#7c3aed;
-    color:#fff;
+    color:white;
 }
 
-/* HERO */
+/* ================= HERO ================= */
+
 .hero{
     min-height:85vh;
     display:flex;
@@ -86,13 +88,13 @@ body{
 }
 
 .avatar{
-    width:180px;
-    height:180px;
+    width:200px;
+    height:200px;
     border-radius:50%;
     overflow:hidden;
     margin-bottom:20px;
     animation:float 4s ease-in-out infinite;
-    box-shadow:0 25px 60px rgba(168,85,247,0.25);
+    box-shadow:0 30px 70px rgba(168,85,247,0.3);
 }
 
 @keyframes float{
@@ -105,12 +107,12 @@ body{
     width:100%;
     height:100%;
     object-fit:cover;
+    transform:scale(1.15);
 }
 
 .hero h1{
     font-size:48px;
     font-weight:700;
-    margin-bottom:10px;
 }
 
 .typing{
@@ -118,17 +120,17 @@ body{
     font-weight:600;
     color:#7c3aed;
     height:28px;
-    margin-bottom:15px;
+    margin:10px 0 15px;
 }
 
-.about-summary{
-    max-width:650px;
+.hero p{
+    max-width:720px;
     color:#555;
     margin-bottom:35px;
-    line-height:1.6;
 }
 
-/* STATS */
+/* ================= STATS ================= */
+
 .stats{
     display:flex;
     gap:60px;
@@ -146,7 +148,8 @@ body{
     color:#666;
 }
 
-/* SECTIONS */
+/* ================= SECTIONS ================= */
+
 section{
     padding:90px 20px;
     text-align:center;
@@ -157,13 +160,14 @@ section{
 .section-title{
     font-size:32px;
     margin-bottom:20px;
+    font-weight:700;
 }
 
 .section-sub{
-    max-width:750px;
+    max-width:800px;
     margin:auto;
     color:#555;
-    margin-bottom:40px;
+    margin-bottom:50px;
 }
 
 .grid{
@@ -177,7 +181,7 @@ section{
 .card{
     background:rgba(255,255,255,0.75);
     backdrop-filter:blur(20px);
-    padding:28px;
+    padding:30px;
     border-radius:20px;
     box-shadow:0 20px 50px rgba(124,58,237,0.08);
     transition:0.4s;
@@ -187,12 +191,13 @@ section{
     transform:translateY(-8px);
 }
 
-/* CONTACT */
+/* ================= CONTACT ================= */
+
 .contact-icons{
     display:flex;
     justify-content:center;
-    gap:25px;
-    margin-top:25px;
+    gap:35px;
+    margin-top:30px;
 }
 
 .contact-icons a{
@@ -202,28 +207,28 @@ section{
     align-items:center;
     justify-content:center;
     border-radius:50%;
-    background:rgba(255,255,255,0.8);
+    background:white;
     box-shadow:0 10px 30px rgba(124,58,237,0.15);
     transition:0.3s;
 }
 
 .contact-icons a:hover{
-    transform:translateY(-5px) scale(1.1);
+    transform:scale(1.15);
     background:#7c3aed;
 }
 
-.contact-icons a:hover svg{
-    fill:#fff;
+.contact-icons svg{
+    width:26px;
+    height:26px;
+    fill:#7c3aed;
 }
 
-svg{
-    width:24px;
-    height:24px;
-    fill:#7c3aed;
-    transition:0.3s;
+.contact-icons a:hover svg{
+    fill:white;
 }
 </style>
 </head>
+
 <body>
 
 <canvas id="rain"></canvas>
@@ -231,13 +236,14 @@ svg{
 <nav class="navbar">
 <strong>Shridhar DT</strong>
 <div>
-<a href="#home" class="nav-link active">Home</a>
-<a href="#expertise" class="nav-link">Expertise</a>
-<a href="#projects" class="nav-link">Projects</a>
-<a href="#contact" class="nav-link">Contact</a>
+<a href="#home" class="active">Home</a>
+<a href="#expertise">Expertise</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
 </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero" id="home">
 <div class="avatar">
 <img src="bitmoji.png" alt="Shridhar">
@@ -246,10 +252,8 @@ svg{
 <h1>Shridhar DT</h1>
 <div class="typing" id="typing"></div>
 
-<p class="about-summary">
-QA Automation Engineer specializing in scalable test frameworks,
-CI/CD-integrated execution, and structured reporting systems.
-Focused on reliability and enterprise-grade automation quality.
+<p>
+QA Automation Engineer specializing in enterprise-grade automation frameworks, CI/CD-integrated execution pipelines, structured test architecture, and observability-driven reporting systems.
 </p>
 
 <div class="stats">
@@ -259,122 +263,144 @@ Focused on reliability and enterprise-grade automation quality.
 </div>
 </section>
 
+<!-- TECHNICAL EXPERTISE -->
 <section id="expertise">
-<h2 class="section-title">Technical Experience</h2>
+<h2 class="section-title">Technical Expertise</h2>
+
 <p class="section-sub">
-Python & PyTest framework engineering, Allure reporting integration,
-and Azure DevOps CI/CD automation pipelines.
+Advanced automation engineering expertise across Python-based framework development, cross-browser UI automation, DevOps orchestration, and enterprise reporting ecosystems.
 </p>
 
 <div class="grid">
+
 <div class="card">
-<h3>Automation Framework</h3>
-<p>Modular architecture using Page Object Model, reusable utilities, structured logging.</p>
+<h3>Automation Framework Engineering</h3>
+<p>
+Designed scalable test automation frameworks using Python, PyTest, and Page Object Model (POM) architecture. Implemented reusable abstraction layers, structured logging mechanisms, dependency isolation, and modular utilities to ensure maintainability and execution stability across enterprise applications.
+</p>
 </div>
 
 <div class="card">
-<h3>Reporting</h3>
-<p>Step-level traceability with Allure and structured execution diagnostics.</p>
+<h3>Reporting & Observability</h3>
+<p>
+Integrated Allure reporting with step-level traceability, execution metadata tagging, structured diagnostics, and failure analytics. Enabled transparent regression reporting pipelines with enhanced defect root-cause visibility across multi-environment deployments.
+</p>
 </div>
 
 <div class="card">
-<h3>DevOps Integration</h3>
-<p>Secure CI/CD automation with environment configuration and artifact publishing.</p>
+<h3>DevOps & CI/CD Integration</h3>
+<p>
+Engineered CI/CD automation pipelines in Azure DevOps incorporating automated regression triggers, secure secrets injection, artifact publishing, environment-based configuration management, and continuous validation workflows for production-grade releases.
+</p>
 </div>
+
+<div class="card">
+<h3>Technology Stack</h3>
+<p>
+<strong>Languages:</strong> Python, JavaScript, SQL<br>
+<strong>Frameworks:</strong> PyTest, Cypress<br>
+<strong>DevOps:</strong> Git, Azure DevOps, CI/CD Pipelines<br>
+<strong>Tools:</strong> Allure Reports, Jira, Structured Logging Systems
+</p>
+</div>
+
 </div>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects">
-<h2 class="section-title">Enterprise Implementation</h2>
+<h2 class="section-title">Enterprise Automation Implementation</h2>
 
 <div class="grid">
+
 <div class="card">
-<h3>Regression Framework</h3>
-<p>Enterprise-grade automation improving stability and maintainability.</p>
+<h3>Modular Enterprise Regression Framework</h3>
+<p>
+Architected and deployed a maintainable automation framework for complex enterprise systems. Reduced regression execution time, improved script reliability, and standardized reusable test components using layered abstraction principles and centralized configuration management.
+</p>
 </div>
 
 <div class="card">
-<h3>Observability Reporting</h3>
-<p>Enhanced failure diagnostics and analytics visibility.</p>
+<h3>Observability-Driven Test Reporting</h3>
+<p>
+Implemented structured Allure-based reporting architecture integrated within CI/CD pipelines. Enabled granular step analytics, failure categorization, execution dashboards, and traceability mapping between requirements, test cases, and defects.
+</p>
 </div>
 
 <div class="card">
-<h3>Secure Pipeline</h3>
-<p>CI/CD integrated automated validation workflows.</p>
+<h3>Secure CI/CD Automation Pipeline</h3>
+<p>
+Established Azure DevOps pipeline orchestration for automated build validation and regression testing. Integrated environment isolation, secure variable groups, artifact storage, and production-ready deployment validation mechanisms.
+</p>
 </div>
+
 </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
 <h2 class="section-title">Contact</h2>
-<p class="section-sub">Let's connect for automation opportunities.</p>
 
 <div class="contact-icons">
 
-<a href="https://github.com/Shridhardt" target="_blank" title="GitHub">
-<svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39..."/></svg>
+<a href="mailto:shridhardt@hotmail.com">
+<svg viewBox="0 0 24 24"><path d="M12 13.065L.015 4.5h23.97L12 13.065zM12 15.135L0 6.57V19.5h24V6.57L12 15.135z"/></svg>
 </a>
 
-<a href="https://linkedin.com/in/shridhar-dt-5869a8196" target="_blank" title="LinkedIn">
-<svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 5 3.8 6.18 2.31 6.18..."/></svg>
+<a href="https://linkedin.com/in/shridhar-dt-5869a8196" target="_blank">
+<svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 5 3.8 6.18 2.31 6.18 0.82 6.18-.36 5-.36 3.5S.82.82 2.31.82c1.49 0 2.67 1.18 2.67 2.68zM.13 8.91H4.5V24H.13zM8.5 8.91h4.19v2.07h.06c.58-1.1 2-2.26 4.12-2.26 4.41 0 5.22 2.9 5.22 6.67V24h-4.38v-7.45c0-1.78-.03-4.08-2.49-4.08-2.5 0-2.88 1.95-2.88 3.96V24H8.5z"/></svg>
 </a>
 
-<a href="mailto:shridhardt@hotmail.com" title="Email">
-<svg viewBox="0 0 24 24"><path d="M12 13.065L0 4.5V19.5h24V4.5L12 13.065z"/></svg>
+<a href="https://github.com/Shridhardt" target="_blank">
+<svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.112.82-.262.82-.583 0-.287-.012-1.244-.017-2.255-3.338.726-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.757-1.333-1.757-1.089-.745.083-.729.083-.729 1.205.085 1.838 1.238 1.838 1.238 1.07 1.833 2.807 1.303 3.492.997.108-.775.418-1.303.76-1.603-2.665-.303-5.467-1.333-5.467-5.93 0-1.31.468-2.382 1.235-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.53 11.53 0 013.003-.404c1.018.005 2.042.138 3.003.404 2.29-1.552 3.296-1.23 3.296-1.23.653 1.653.242 2.873.118 3.176.77.839 1.234 1.911 1.234 3.221 0 4.61-2.807 5.624-5.479 5.921.43.37.823 1.102.823 2.222 0 1.606-.015 2.898-.015 3.293 0 .324.216.699.825.58C20.565 21.796 24 17.297 24 12c0-6.63-5.373-12-12-12z"/></svg>
 </a>
 
 </div>
-
-<p style="margin-top:20px;color:#555;font-size:14px;">
-Email: shridhardt@hotmail.com<br>
-LinkedIn: linkedin.com/in/shridhar-dt-5869a8196<br>
-GitHub: github.com/Shridhardt
-</p>
 </section>
 
 <script>
-
-/* Typing Animation */
 const roles=[
 "QA Automation Engineer",
-"Enterprise Automation",
-"CI/CD Integration"
+"Enterprise Application Automation",
+"CI/CD Pipeline Integration",
+"Structured Test Architecture"
 ];
 
 let i=0,j=0,isDeleting=false;
 const typing=document.getElementById("typing");
 
 function type(){
-let text=roles[i];
+let current=roles[i];
 if(!isDeleting){
-typing.textContent=text.substring(0,j++);
-if(j>text.length){isDeleting=true;setTimeout(type,1000);return;}
+typing.textContent=current.substring(0,j++);
+if(j>current.length){isDeleting=true;setTimeout(type,1200);return;}
 }else{
-typing.textContent=text.substring(0,j--);
+typing.textContent=current.substring(0,j--);
 if(j<0){isDeleting=false;i=(i+1)%roles.length;}
 }
-setTimeout(type,isDeleting?40:80);
+setTimeout(type,isDeleting?50:90);
 }
 type();
 
-/* Rain Effect */
+/* Rain */
 const canvas=document.getElementById("rain");
 const ctx=canvas.getContext("2d");
 canvas.width=window.innerWidth;
 canvas.height=window.innerHeight;
 
 const drops=[];
-for(let i=0;i<300;i++){
+for(let i=0;i<350;i++){
 drops.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,speed:Math.random()*2+1});
 }
 
 function draw(){
 ctx.clearRect(0,0,canvas.width,canvas.height);
-ctx.strokeStyle="rgba(168,85,247,0.3)";
+ctx.strokeStyle="rgba(168,85,247,0.35)";
+ctx.lineWidth=1.2;
 drops.forEach(d=>{
 ctx.beginPath();
 ctx.moveTo(d.x,d.y);
-ctx.lineTo(d.x,d.y+12);
+ctx.lineTo(d.x,d.y+15);
 ctx.stroke();
 d.y+=d.speed;
 if(d.y>canvas.height){d.y=0;}
@@ -382,27 +408,6 @@ if(d.y>canvas.height){d.y=0;}
 requestAnimationFrame(draw);
 }
 draw();
-
-/* Active Nav Highlight */
-const sections=document.querySelectorAll("section");
-const navLinks=document.querySelectorAll(".nav-link");
-
-window.addEventListener("scroll",()=>{
-let current="";
-sections.forEach(section=>{
-const sectionTop=section.offsetTop;
-if(pageYOffset>=sectionTop-150){
-current=section.getAttribute("id");
-}
-});
-navLinks.forEach(link=>{
-link.classList.remove("active");
-if(link.getAttribute("href")==="#"+current){
-link.classList.add("active");
-}
-});
-});
-
 </script>
 
 </body>
