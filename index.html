@@ -13,7 +13,7 @@ body{
     color:#1e293b;
 }
 
-/* NAVIGATION */
+/* NAV */
 nav{
     display:flex;
     justify-content:space-between;
@@ -46,15 +46,37 @@ header{
 }
 header h1{
     font-size:52px;
-    margin-bottom:15px;
+    margin-bottom:10px;
 }
+
+/* Floating rotating role */
+.floating-text{
+    font-size:20px;
+    font-weight:500;
+    height:30px;
+    margin-bottom:20px;
+    animation: floatY 3s ease-in-out infinite;
+}
+
+@keyframes floatY{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-6px);}
+    100%{transform:translateY(0);}
+}
+
+.fade{
+    opacity:0;
+    transition:opacity 0.5s ease;
+}
+
 header p{
     max-width:750px;
     line-height:1.6;
     font-size:18px;
 }
+
 .btn{
-    margin-top:30px;
+    margin-top:25px;
     padding:12px 30px;
     border-radius:30px;
     border:2px solid white;
@@ -68,7 +90,7 @@ header p{
     color:#667eea;
 }
 
-/* SECTION */
+/* SECTIONS */
 section{
     padding:100px 120px;
 }
@@ -78,7 +100,7 @@ h2{
     font-size:32px;
 }
 
-/* WHAT I DO */
+/* GRID CARDS */
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -94,8 +116,6 @@ h2{
 .card:hover{
     transform:translateY(-8px);
 }
-
-/* PROJECTS */
 .project-card{
     cursor:pointer;
 }
@@ -131,7 +151,7 @@ button{
 }
 .follow a{
     margin:0 15px;
-    font-size:20px;
+    font-size:18px;
     text-decoration:none;
     color:#2563eb;
 }
@@ -183,14 +203,19 @@ footer{
 </div>
 </nav>
 
-<!-- 1️⃣ HERO SECTION -->
+<!-- 1️⃣ HERO -->
 <header id="home">
 <h1>Shridhar DT</h1>
-<p>QA Automation Engineer | Enterprise Application Automation | Python</p>
-<p style="margin-top:20px;">
+
+<div class="floating-text">
+<span id="roleText">QA Automation Engineer</span>
+</div>
+
+<p>
 I design and implement scalable automation frameworks for complex enterprise applications,
 focusing on reliability, maintainability, structured reporting, and secure development practices.
 </p>
+
 <a href="#projects" class="btn">View Projects</a>
 </header>
 
@@ -198,25 +223,27 @@ focusing on reliability, maintainability, structured reporting, and secure devel
 <section id="what">
 <h2>What I Do</h2>
 <div class="grid">
+
 <div class="card">
-<h3>Automation Framework Development</h3>
-<p>Design modular and scalable automation architectures using Python & PyTest.</p>
+<h3>Automation Framework Architecture</h3>
+<p>Design modular, scalable automation systems using Python & PyTest with reusable components.</p>
 </div>
 
 <div class="card">
-<h3>Structured Reporting</h3>
-<p>Integrate Allure Reports for enhanced traceability and debugging visibility.</p>
+<h3>Enterprise Desktop Automation</h3>
+<p>Automate complex business workflows using Pywinauto with structured validation strategies.</p>
 </div>
 
 <div class="card">
-<h3>Enterprise Validation</h3>
-<p>Automate complex workflows and regression modules for enterprise desktop systems.</p>
+<h3>Allure Reporting & Traceability</h3>
+<p>Integrate Allure for step-level reporting, execution visibility, and failure traceability.</p>
 </div>
 
 <div class="card">
-<h3>Security & Configuration</h3>
-<p>Implement secure coding practices and environment-based credential management.</p>
+<h3>CI/CD Pipeline Integration</h3>
+<p>Implement automation in CI/CD workflows ensuring continuous validation and deployment stability.</p>
 </div>
+
 </div>
 </section>
 
@@ -227,17 +254,17 @@ focusing on reliability, maintainability, structured reporting, and secure devel
 
 <div class="card project-card" onclick="openModal('p1')">
 <h3>Enterprise Automation Framework</h3>
-<p>Click to view detailed implementation</p>
+<p>Click to view detailed architecture & approach</p>
 </div>
 
 <div class="card project-card" onclick="openModal('p2')">
 <h3>Allure Reporting Integration</h3>
-<p>Click to view approach & impact</p>
+<p>Click to view reporting enhancements</p>
 </div>
 
 <div class="card project-card" onclick="openModal('p3')">
 <h3>Secure Credential Refactoring</h3>
-<p>Click to view security improvements</p>
+<p>Click to view security implementation</p>
 </div>
 
 </div>
@@ -266,15 +293,17 @@ focusing on reliability, maintainability, structured reporting, and secure devel
 © 2026 Shridhar DT. All rights reserved.
 </footer>
 
-<!-- PROJECT MODAL -->
+<!-- PROJECT MODALS -->
+
 <div id="p1" class="modal">
 <div class="modal-content">
 <div class="close" onclick="closeModal('p1')">Close</div>
 <h3>Enterprise Automation Framework</h3>
 <p>
-Designed modular framework using PyTest.
-Implemented reusable components, structured logging,
-Allure reporting integration, and improved regression reliability.
+Designed modular automation framework using PyTest.
+Implemented Page Object Model structure, reusable utilities,
+structured logging, and integrated Allure reporting.
+Improved regression reliability and maintainability.
 </p>
 </div>
 </div>
@@ -284,8 +313,9 @@ Allure reporting integration, and improved regression reliability.
 <div class="close" onclick="closeModal('p2')">Close</div>
 <h3>Allure Reporting Integration</h3>
 <p>
-Integrated step-level reporting with Allure,
-enabled detailed execution traceability and improved debugging workflow.
+Integrated Allure with PyTest to enable step-level traceability,
+improved debugging visibility, structured failure analysis,
+and enhanced reporting transparency for stakeholders.
 </p>
 </div>
 </div>
@@ -296,7 +326,8 @@ enabled detailed execution traceability and improved debugging workflow.
 <h3>Secure Credential Refactoring</h3>
 <p>
 Removed hardcoded credentials, implemented environment variables,
-and strengthened repository security compliance.
+improved Git practices, and strengthened automation framework
+security compliance.
 </p>
 </div>
 </div>
@@ -308,6 +339,29 @@ document.getElementById(id).style.display="flex";
 function closeModal(id){
 document.getElementById(id).style.display="none";
 }
+
+/* Floating rotating roles */
+const roles = [
+"QA Automation Engineer",
+"Enterprise Application Automation",
+"Pywinauto Desktop UI Automation",
+"Allure Reporting & Test Traceability",
+"CI/CD Pipeline Integration"
+];
+
+let index = 0;
+const roleText = document.getElementById("roleText");
+
+function changeRole(){
+roleText.classList.add("fade");
+setTimeout(()=>{
+index = (index + 1) % roles.length;
+roleText.textContent = roles[index];
+roleText.classList.remove("fade");
+},500);
+}
+
+setInterval(changeRole,3000);
 </script>
 
 </body>
