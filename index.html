@@ -1,340 +1,331 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shridhar DT | QA Automation Engineer</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
-body{
-    font-family:'Poppins',sans-serif;
-    background:#f4f6fb;
-    color:#1e293b;
+body {
+    background: #f5f7fb;
 }
 
 /* NAVBAR */
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 80px;
-    background:white;
-    position:fixed;
-    width:100%;
-    box-shadow:0 2px 10px rgba(0,0,0,0.05);
-    z-index:100;
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 1000;
 }
 
-nav a{
-    text-decoration:none;
-    margin-left:25px;
-    color:#1e293b;
-    font-weight:500;
+nav h3 {
+    font-weight: 600;
 }
 
-nav a:hover{
-    color:#7c3aed;
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
 }
 
-/* HERO */
-header{
-    height:100vh;
-    background:linear-gradient(135deg,#5f72bd,#9b23ea);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    color:white;
-    padding:80px 20px;
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
 }
 
-.hero-container{
-    max-width:900px;
+/* HERO SECTION */
+.hero {
+    height: 100vh;
+    background: linear-gradient(135deg, #5f72ff, #9b23ea);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 20px 40px;
+    color: white;
 }
 
-/* BITMOJI BIG CIRCLE */
-.bitmoji{
-    width:220px;
-    height:220px;
-    border-radius:50%;
-    object-fit:cover;
-    margin-bottom:35px;
-    border:8px solid rgba(255,255,255,0.9);
-    box-shadow:
-        0 0 0 15px rgba(255,255,255,0.2),
-        0 0 80px rgba(255,255,255,0.6);
-    animation:float 4s ease-in-out infinite;
+.hero-content {
+    max-width: 900px;
 }
 
-@keyframes float{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(-15px);}
-    100%{transform:translateY(0);}
+/* AVATAR */
+.hero-avatar {
+    width: 240px;
+    height: 240px;
+    margin: 0 auto 35px;
+    border-radius: 50%;
+    padding: 8px;
+    background: linear-gradient(135deg, #ffffff, rgba(255,255,255,0.3));
+    box-shadow: 0 0 50px rgba(255,255,255,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: floatAvatar 5s ease-in-out infinite;
 }
 
-.hero-name{
-    font-size:56px;
-    font-weight:700;
-    margin-bottom:12px;
+.hero-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 50%;
+    transform: scale(1.2);
 }
 
-.role{
-    font-size:22px;
-    font-weight:500;
-    margin-bottom:22px;
-    min-height:28px;
-    transition:opacity 0.4s ease;
+/* TEXT */
+.hero h1 {
+    font-size: 56px;
+    margin-bottom: 12px;
+    font-weight: 700;
 }
 
-.hero-desc{
-    max-width:750px;
-    margin:0 auto;
-    line-height:1.7;
-    font-size:16px;
-    opacity:0.95;
+.hero h2 {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    opacity: 0.95;
+}
+
+.hero p {
+    font-size: 17px;
+    line-height: 1.7;
+    opacity: 0.9;
+    margin-bottom: 40px;
 }
 
 /* STATS */
-.hero-stats{
-    display:flex;
-    justify-content:center;
-    gap:70px;
-    margin-top:45px;
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
 }
 
-.hero-stats h3{
-    font-size:30px;
-    font-weight:700;
+.hero-stats h3 {
+    font-size: 30px;
+    margin-bottom: 5px;
 }
 
-.hero-stats p{
-    font-size:14px;
-    opacity:0.9;
+.hero-stats span {
+    font-size: 14px;
+    opacity: 0.85;
 }
 
-/* SECTIONS */
-section{
-    padding:100px 120px;
+/* FLOAT ANIMATION */
+@keyframes floatAvatar {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
 }
 
-h2{
-    text-align:center;
-    margin-bottom:50px;
-    font-size:32px;
+/* SECTION COMMON */
+section {
+    padding: 100px 80px;
 }
 
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 32px;
+    font-weight: 600;
 }
 
-.card{
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.05);
-    transition:0.3s ease;
+/* WHAT I DO */
+.whatido {
+    background: white;
 }
 
-.card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 20px 40px rgba(0,0,0,0.1);
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #f4f6ff;
+    padding: 30px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+}
+
+/* PROJECTS */
+.projects {
+    background: #f5f7fb;
 }
 
 /* CONTACT */
-.contact-box{
-    background:white;
-    padding:40px;
-    border-radius:20px;
-    max-width:700px;
-    margin:0 auto;
-    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+.contact {
+    background: white;
+    text-align: center;
 }
 
-input, textarea{
-    width:100%;
-    padding:12px;
-    margin-bottom:20px;
-    border-radius:8px;
-    border:1px solid #ddd;
+.contact a {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    background: linear-gradient(135deg, #5f72ff, #9b23ea);
+    color: white;
+    font-weight: 500;
 }
 
-button{
-    background:#7c3aed;
-    color:white;
-    padding:12px 20px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
+/* FOOTER */
+.footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 30px;
 }
 
-button:hover{
-    background:#6d28d9;
+.footer a {
+    color: #9b23ea;
+    margin: 0 10px;
+    text-decoration: none;
 }
 
-/* FOLLOW */
-.follow{
-    text-align:center;
-}
-
-.follow a{
-    margin:0 15px;
-    font-size:18px;
-    text-decoration:none;
-    color:#7c3aed;
-}
-
-footer{
-    text-align:center;
-    padding:30px;
-    background:#111827;
-    color:white;
-}
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <nav>
-<div><strong>Shridhar DT</strong></div>
-<div>
-<a href="#home">Home</a>
-<a href="#what">What I Do</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-</div>
+    <h3>Shridhar DT</h3>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#whatido">What I Do</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 </nav>
 
 <!-- HERO -->
-<header id="home">
-<div class="hero-container">
+<section class="hero">
+    <div class="hero-content">
 
-<img src="bitmoji.png" class="bitmoji" alt="Shridhar DT">
+        <div class="hero-avatar">
+            <img src="bitmoji.png" alt="Shridhar DT">
+        </div>
 
-<h1 class="hero-name">Shridhar DT</h1>
+        <h1>Shridhar DT</h1>
+        <h2>QA Automation Engineer</h2>
 
-<div class="role" id="roleText">QA Automation Engineer</div>
+        <p>
+            I design and implement scalable automation frameworks for complex enterprise
+            applications, focusing on reliability, maintainability, structured reporting,
+            and secure development practices.
+        </p>
 
-<p class="hero-desc">
-I design and implement scalable automation frameworks for complex enterprise applications,
-focusing on reliability, maintainability, structured reporting, and secure development practices.
-</p>
+        <div class="hero-stats">
+            <div>
+                <h3>4+</h3>
+                <span>Years Experience</span>
+            </div>
+            <div>
+                <h3>100+</h3>
+                <span>Automation Scripts</span>
+            </div>
+            <div>
+                <h3>Enterprise</h3>
+                <span>Production Ready</span>
+            </div>
+        </div>
 
-<div class="hero-stats">
-<div>
-<h3>4+</h3>
-<p>Years Experience</p>
-</div>
-<div>
-<h3>100+</h3>
-<p>Automation Scripts</p>
-</div>
-<div>
-<h3>Enterprise</h3>
-<p>Production Ready</p>
-</div>
-</div>
-
-</div>
-</header>
+    </div>
+</section>
 
 <!-- WHAT I DO -->
-<section id="what">
-<h2>What I Do</h2>
-<div class="grid">
+<section class="whatido" id="whatido">
+    <h2 class="section-title">What I Do</h2>
 
-<div class="card">
-<h3>Automation Framework Architecture</h3>
-<p>Design modular, scalable automation systems using Python & PyTest.</p>
-</div>
+    <div class="cards">
+        <div class="card">
+            <h3>Automation Framework Development</h3>
+            <p>Design modular, scalable Python automation frameworks using PyTest and enterprise-grade architecture.</p>
+        </div>
 
-<div class="card">
-<h3>Enterprise Desktop Automation</h3>
-<p>Automate complex workflows using Pywinauto with structured validation.</p>
-</div>
+        <div class="card">
+            <h3>Desktop UI Automation</h3>
+            <p>Implement advanced desktop automation using Pywinauto for complex enterprise workflows.</p>
+        </div>
 
-<div class="card">
-<h3>Allure Reporting & Debugging</h3>
-<p>Integrate Allure for detailed execution visibility and failure traceability.</p>
-</div>
+        <div class="card">
+            <h3>Allure Reporting & Traceability</h3>
+            <p>Integrate structured reporting with Allure for enhanced failure traceability and debugging visibility.</p>
+        </div>
 
-<div class="card">
-<h3>CI/CD Pipeline Integration</h3>
-<p>Enable continuous validation through automated CI/CD workflows.</p>
-</div>
-
-</div>
+        <div class="card">
+            <h3>CI/CD Integration</h3>
+            <p>Enable automated regression pipelines with CI/CD systems ensuring production-ready automation delivery.</p>
+        </div>
+    </div>
 </section>
 
 <!-- PROJECTS -->
-<section id="projects">
-<h2>Projects</h2>
-<div class="grid">
+<section class="projects" id="projects">
+    <h2 class="section-title">Projects</h2>
 
-<div class="card">
-<h3>Enterprise Automation Framework</h3>
-<p>Built modular automation architecture for complex enterprise workflows.</p>
-</div>
+    <div class="cards">
+        <div class="card">
+            <h3>Enterprise Automation Framework</h3>
+            <p>Built scalable automation architecture for multi-module enterprise systems reducing regression effort significantly.</p>
+        </div>
 
-<div class="card">
-<h3>Allure Reporting Integration</h3>
-<p>Enabled structured reporting and enhanced debugging visibility.</p>
-</div>
+        <div class="card">
+            <h3>Allure Reporting Integration</h3>
+            <p>Implemented structured reporting and step-level traceability for improved debugging efficiency.</p>
+        </div>
 
-</div>
+        <div class="card">
+            <h3>Secure Credential Refactoring</h3>
+            <p>Replaced hardcoded credentials with environment-based secure configuration management.</p>
+        </div>
+    </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
-<h2>Contact</h2>
-<div class="contact-box">
-<input type="text" placeholder="Name">
-<input type="email" placeholder="Email">
-<textarea rows="5" placeholder="Message"></textarea>
-<button>Send Message</button>
+<section class="contact" id="contact">
+    <h2 class="section-title">Get In Touch</h2>
+
+    <a href="mailto:shridhardt@hotmail.com">Email Me</a>
+    <a href="https://linkedin.com/in/shridhar-dt-5869a8196" target="_blank">LinkedIn</a>
+    <a href="https://github.com/Shridhardt" target="_blank">GitHub</a>
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+    <p>© 2026 Shridhar DT. All rights reserved.</p>
 </div>
-</section>
-
-<!-- FOLLOW -->
-<section class="follow">
-<h2>Follow Me</h2>
-<a href="https://linkedin.com/in/shridhar-dt-5869a8196" target="_blank">LinkedIn</a>
-<a href="https://github.com/Shridhardt" target="_blank">GitHub</a>
-<a href="mailto:shridhardt@hotmail.com">Email</a>
-</section>
-
-<footer>
-© 2026 Shridhar DT. All rights reserved.
-</footer>
-
-<script>
-const roles = [
-"QA Automation Engineer",
-"Enterprise Application Automation",
-"Pywinauto Desktop UI Automation",
-"Allure Reporting & Test Traceability",
-"CI/CD Pipeline Integration"
-];
-
-let index = 0;
-const roleText = document.getElementById("roleText");
-
-setInterval(()=>{
-    roleText.style.opacity = 0;
-    setTimeout(()=>{
-        index = (index + 1) % roles.length;
-        roleText.textContent = roles[index];
-        roleText.style.opacity = 1;
-    },400);
-},3000);
-</script>
 
 </body>
 </html>
